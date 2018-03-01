@@ -1,0 +1,130 @@
+@import "font.sass"
+body
+
+
+.block
+	width: 1200px
+.header_block
+	height: 176px
+	display: flex
+	flex-direction: row
+	justify-content: center
+	width: 1200px
+	margin: 0 auto
+	padding-top: 40px
+.navi
+	background: #2b2c35
+.nav_block
+	background: #2b2c35
+	height: 80px
+	width: 1200px
+	margin: 0 auto
+	font-size: 25px
+.nav_block a
+	color: #ffffff
+.nav-item.nav-link img
+	padding-left: 11px
+.empty_link
+	width: 197px
+.header_right
+	display: flex
+	width: 223px
+  height: 41px
+  mix-blend-mode: undefined
+  border-radius: 1px
+  background-image: linear-gradient(to right, #4465ac, #6b8acd 99%)
+.header_logo
+	text-align: center
+.language
+  width: 117px
+  height: 41px
+  border-radius: 1px
+  background-color: #ffffff
+  box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
+.header_lang
+	margin-left: 130px
+.header_lang a::before
+	content: ''
+	background: url('') no-repeat
+.table_up
+	padding-top: 40px
+	padding-bottom: 40px
+.search_input
+	width: 274px
+  height: 41px
+	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
+.form-control
+	border-radius: 0px !important
+	font-family: OpenSans
+  font-size: 14px
+  text-align: left
+  color: #d1d1d1
+
+.form-control:hover
+	// border-right: transparent
+.btn.btn-secondary
+	border-radius: 0px !important
+	// border-left: transparent
+.currency
+	display: flex
+	flex-direction: row
+	align-items: baseline
+.table_coin
+	display: flex
+	float: column
+	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
+.main_row .col
+	padding: 25px 0 25px 10px
+	background-image: linear-gradient(to bottom, #f0f0f0, #ffffff 99%)
+	text-transform: uppercase
+.table_coin .col
+	color: #28292b
+	border: 1px solid #dbdbdb
+	font-weight: bold
+	font-size: 14px
+	padding-top: 15px
+.table_coin span
+	color: #4184de
+.table_coin .col img
+	padding-left: 8px
+	padding-right: 10px
+.col_first
+	min-width: 220px
+.col_market
+	min-width: 170px
+.col_price, .col_vwap, .col_volume
+	font-weight: normal !important
+.col_price_down
+	color: #ef1740	!important
+.col_price_up
+	color: #79b54d	!important
+.col_price_up::after
+	content: ''
+	background: url('../img/up.png') 100%  37% no-repeat
+	padding-left: 12px
+.col_price_down::after
+	content: ''
+	background: url('../img/down.png') 100%  37% no-repeat
+	padding-left: 12px
+.col_trading
+	min-width: 172px
+.col_volume
+	min-width: 135px
+.drop
+  border: 1px solid #dbdbdb
+.drop .table_coin
+	box-shadow: none
+.drop .col
+	border: none !important
+.chart_header
+	padding-top: 50px
+	padding-left: 27px
+	font-size: 25px
+  text-align: left
+  color: #28292b
+.select_up
+	background-color: #fff4f4
+.select_down
+	background-color: #edffdf
+footer
+	background-color: #2b2c35
