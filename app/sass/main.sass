@@ -14,6 +14,9 @@ body
 	padding-top: 40px
 .navi
 	background: #2b2c35
+.navik
+	display: flex
+	justify-content: space-between
 .nav_block
 	font-family: "Proxima Nova"
 	font-weight: 500
@@ -22,6 +25,27 @@ body
 	width: 1200px
 	margin: 0 auto
 	font-size: 25px
+.dropdown-menu
+	margin: 0
+	min-width: 0
+	border-radius: 0
+	height: 41px
+.rus::before
+	content: ''
+	background: url('../img/ru.png')
+	padding-left: 22px
+	margin-right: 11px
+.dropdown-item
+	padding-top: 1px
+.eng::before
+	content: ''
+	background: url('../img/eng.png') no-repeat
+	padding-left: 25px
+	margin-right: 16px
+	margin-left: -7px
+.navbar-nav ul
+	display: flex
+	flex-direction: row
 .nav_block a
 	color: #ffffff
 .nav-item.nav-link img
@@ -30,31 +54,41 @@ body
 	width: 197px
 .header_right
 	display: flex
-	width: 223px
   height: 41px
-  mix-blend-mode: undefined
   border-radius: 1px
   background-image: linear-gradient(to right, #4465ac, #6b8acd 99%)
 .header_logo
 	text-align: center
 .language
-  width: 117px
+  width: 220px
   height: 41px
   border-radius: 1px
   background-color: #ffffff
   box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
-.header_lang
-	margin-left: 130px
-.header_lang a::before
-	content: ''
-	background: url('') no-repeat
+.language
+	background: url('../img/facebook.png')
+.language:hover
+	background: url('../img/facebook_hover.png')
+.input-group
+	width: auto
+	margin-left: 20px
+
+#table
+	font-family: OpenSans
+	white-space: nowrap
 .table_up
 	padding-top: 40px
 	padding-bottom: 40px
 .search_input
+	display: flex
+	flex-direction: row
 	width: 274px
   height: 41px
 	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
+.form-control
+	font-family: OpenSans
+	font-size: 14px
+	color: #d1d1d1
 .form-control
 	border-radius: 0px !important
 	font-family: OpenSans
@@ -70,15 +104,18 @@ body
 .currency
 	display: flex
 	flex-direction: row
+	justify-content: flex-end
 	align-items: baseline
 .table_coin
 	display: flex
 	float: column
 	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
 .main_row .col
-	padding: 25px 0 25px 10px
+	padding: 25px 0 25px 9px
 	background-image: linear-gradient(to bottom, #f0f0f0, #ffffff 99%)
 	text-transform: uppercase
+.main_row .col.col_volume
+		font-weight: bold !important
 .table_coin .col
 	color: #28292b
 	border: 1px solid #dbdbdb
@@ -121,6 +158,7 @@ body
 .chart_header
 	padding-top: 50px
 	padding-left: 27px
+.chart_header	h2
 	font-size: 25px
   text-align: left
   color: #28292b
@@ -128,5 +166,126 @@ body
 	background-color: #fff4f4
 .select_down
 	background-color: #edffdf
+
 footer
+	color: #ffffff
 	background-color: #2b2c35
+	font-family: OpenSans
+	font-size: 13px
+	margin-top: 58px
+footer ul
+	padding-left: 0
+footer .block
+	padding-top: 58px
+.footer_1
+
+footer .rus
+	color: #fff
+	background-color: #000
+	border-radius: 3px
+	background-color: #2b2c35
+	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
+	border: solid 1px rgba(219, 219, 219, 0.13)
+.footer_1 .input-group-btn
+	width: 104px
+footer .dropdown-menu
+	margin-left: -3px
+footer ul
+ list-style-type: none
+footer ul a
+	line-height: 2.92
+	font-weight: bold
+	font-family: OpenSans
+	color: #ffffff
+	text-transform: uppercase
+.footer_3 ul a
+	color: #888a97
+	text-transform: none
+.footer_3 ul > :first-child a
+	color: #fff
+.footer_4 ul
+	padding-left: 0
+.footer_5 ul
+	padding-left: 0
+footer
+	.form-control,	.input-group-addon
+		background-color: #2b2c35
+footer .input-group
+	margin-left: 0
+	width: 217px
+	border: solid 1px rgba(219, 219, 219, 0.13)
+
+// top_ico
+
+#top_ico
+ 	h2
+		padding-top: 72px
+		font-family: Proxima Nova
+  	font-size: 35px
+  	font-weight: 300
+		color: #28292b
+		text-align: center
+#top_ico h3
+	padding-top: 32px
+	padding-bottom: 43px
+	font-family: OpenSans
+	font-size: 16px
+.ico
+	border-top: solid 1px #dbdbdb
+	border-right: solid 1px #dbdbdb
+	border-left: solid 1px #dbdbdb
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	padding-top: 9px
+	.ico:last-child
+	border-bottom: solid 1px #dbdbdb
+.ico_1
+	text-align: left
+	padding-top: 34px
+	padding-bottom: 41px
+	flex-grow: 2
+	max-width: 625px
+.ico_1
+		h4
+			font-family: OpenSans
+			font-size: 18px
+			font-weight: bold
+		p
+			font-family: OpenSans
+			font-size: 14px
+
+.ico_2, .ico_3
+	padding-top: 37px
+	flex-grow: 1
+.ico_4, .ico_5
+
+.ico_2 p:first-child, .ico_3 p:first-child
+	font-weight: bold
+	margin-bottom: 0
+.ico_4 p:first-child
+	background-color: #79b54d
+	font-family: OpenSans
+	font-size: 10px
+	font-weight: bold
+	font-style: normal
+	font-stretch: normal
+	line-height: 1.9
+	color: #fff
+	padding: 3px 6px
+	margin-top: 1px
+	margin-right: 9px
+.ico_4 p:nth-child(2)
+	font-family: Proxima Nova
+	font-size: 28px
+	font-weight: 900
+	line-height: 0.68
+	color: #e6e7e9
+	margin-top: 60px
+	right: 36px
+	position: absolute
+
+.ico_img img
+	padding: 20px 37px 0
+.ico_4.upcoming p:first-child
+	background-color: #ffb135
