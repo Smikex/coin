@@ -1,19 +1,45 @@
+@import "../libs/bootstrap/scss/bootstrap"
 @import "font.sass"
 body
 
+header
+	padding-top: 27px
+	nav a:hover
+		color: #79b54d
+		text-decoration: none
+		border-bottom: 3px solid #79b54d
+		padding-bottom: 35px
+	span
+		font-family: icomoon
+.app
+	padding-left: 0
 
+.icon-cup:before
+	content: "\e900"
+.icon-index:before
+	content: "\e901"
+.icon-vesi:before
+	content: "\e903"
+.icon-port:before
+	content: "\e902"
+.right_nav
+	a:hover
+		padding-bottom: 32px
 .block
 	width: 1200px
+	padding-right: 0
+	padding-left: 0
 .header_block
-	height: 176px
+	// height: 176px
 	display: flex
 	flex-direction: row
 	justify-content: center
 	width: 1200px
 	margin: 0 auto
-	padding-top: 40px
 .navi
 	background: #2b2c35
+	margin-top: 35px
+	padding-bottom: 20px
 .navik
 	display: flex
 	justify-content: space-between
@@ -25,6 +51,10 @@ body
 	width: 1200px
 	margin: 0 auto
 	font-size: 25px
+
+.left_menu
+	padding-left: 0
+
 .dropdown-menu
 	margin: 0
 	min-width: 0
@@ -43,9 +73,9 @@ body
 	padding-left: 25px
 	margin-right: 16px
 	margin-left: -7px
-.navbar-nav ul
-	display: flex
-	flex-direction: row
+.header_navbar
+	justify-content: space-between
+	padding-top: 8px
 .nav_block a
 	color: #ffffff
 .nav-item.nav-link img
@@ -76,9 +106,16 @@ body
 #table
 	font-family: OpenSans
 	white-space: nowrap
+	.col
+		display: flex
+		align-self: center
+		align-items: center
+		min-height: 61px
+		p
+			margin-bottom: 0
 .table_up
 	padding-top: 40px
-	padding-bottom: 40px
+	padding-bottom: 28px
 .search_input
 	display: flex
 	flex-direction: row
@@ -106,31 +143,61 @@ body
 	flex-direction: row
 	justify-content: flex-end
 	align-items: baseline
+	p
+		font-weight: 500
+		font-family: OpenSans
+		font-size: 14px
+		font-weight: bold
+
 .table_coin
 	display: flex
-	float: column
+
+#accordion
 	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
-.main_row .col
-	padding: 25px 0 25px 9px
-	background-image: linear-gradient(to bottom, #f0f0f0, #ffffff 99%)
+
 	text-transform: uppercase
+.main_row
+		background-image: linear-gradient(to bottom, #f0f0f0, #ffffff 99%)
+.table_coin
+	div:nth-child(1)
+		min-width: 232px
+	div:nth-child(2)
+		min-width: 153px
+	div:nth-child(3)
+		min-width: 115px
+	div:nth-child(4)
+ 		min-width: 135px
+	div:nth-child(5)
+		min-width: 126px
+	div:nth-child(6)
+		min-width: 174px
+	div:nth-child(7)
+ 		min-width: 98px
+	div:nth-child(8)
+ 		min-width: 165px
+.table_coin div:nth-child(8)
+	padding-left: 6px
+
+
 .main_row .col.col_volume
 		font-weight: bold !important
 .table_coin .col
 	color: #28292b
-	border: 1px solid #dbdbdb
+	border-left: 1px solid #dbdbdb
+	border-top: 1px solid #dbdbdb
 	font-weight: bold
 	font-size: 14px
-	padding-top: 15px
+.table_coin .col:last-child
+	border-right: 1px solid #dbdbdb
+// .table_coin:last-child
+// 	border-bottom: 1px solid #dbdbdb
+#col3 .col
+	border-left: none
 .table_coin span
 	color: #4184de
 .table_coin .col img
 	padding-left: 8px
 	padding-right: 10px
-.col_first
-	min-width: 220px
-.col_market
-	min-width: 170px
 .col_price, .col_vwap, .col_volume
 	font-weight: normal !important
 .col_price_down
@@ -145,10 +212,10 @@ body
 	content: ''
 	background: url('../img/down.png') 100%  37% no-repeat
 	padding-left: 12px
+.col_first
+	border-left: none !important
 .col_trading
-	min-width: 172px
-.col_volume
-	min-width: 135px
+	border-right: none !important
 .drop
   border: 1px solid #dbdbdb
 .drop .table_coin
@@ -219,17 +286,21 @@ footer .input-group
 
 #top_ico
  	h2
-		padding-top: 72px
+		padding-top: 70px
 		font-family: Proxima Nova
   	font-size: 35px
   	font-weight: 300
 		color: #28292b
 		text-align: center
 #top_ico h3
-	padding-top: 32px
-	padding-bottom: 43px
+	padding-top: 26px
+	padding-bottom: 39px
 	font-family: OpenSans
 	font-size: 16px
+.ico_header
+	margin: 0 auto
+	width: 830px
+	text-align: center
 .ico
 	border-top: solid 1px #dbdbdb
 	border-right: solid 1px #dbdbdb
@@ -237,15 +308,16 @@ footer .input-group
 	display: flex
 	flex-direction: row
 	justify-content: space-between
-	padding-top: 9px
-	.ico:last-child
+	height: 126px
+.ico:last-child
 	border-bottom: solid 1px #dbdbdb
 .ico_1
 	text-align: left
-	padding-top: 34px
-	padding-bottom: 41px
 	flex-grow: 2
-	max-width: 625px
+	width: 700px
+	padding-right: 105px
+	align-self: center
+	padding-top: 16px
 .ico_1
 		h4
 			font-family: OpenSans
@@ -256,8 +328,11 @@ footer .input-group
 			font-size: 14px
 
 .ico_2, .ico_3
-	padding-top: 37px
+	padding-top: 40px
 	flex-grow: 1
+	font-family: OpenSans
+	font-size: 14px
+	text-align: left
 .ico_4, .ico_5
 
 .ico_2 p:first-child, .ico_3 p:first-child
@@ -272,20 +347,20 @@ footer .input-group
 	font-stretch: normal
 	line-height: 1.9
 	color: #fff
-	padding: 3px 6px
-	margin-top: 1px
-	margin-right: 9px
+	padding: 1px 7px
+	margin-top: 8px
+	margin-right: 11px
 .ico_4 p:nth-child(2)
 	font-family: Proxima Nova
 	font-size: 28px
 	font-weight: 900
 	line-height: 0.68
 	color: #e6e7e9
-	margin-top: 60px
-	right: 36px
+	margin-top: 48px
+	right: 15px
 	position: absolute
 
 .ico_img img
-	padding: 20px 37px 0
+	padding: 20px 23px 0
 .ico_4.upcoming p:first-child
 	background-color: #ffb135
