@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aplpha</title>
+  <link rel="stylesheet" href="css/libs.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
+
+  <script>
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="block container-fluid">
+      <div class="header_block row align-items-center justify-content-between">
+        <div class="app col-md-4">
+          <a href=""><img src="img/google.png" alt=""></a>
+          <a href=""><img src="img/apple_app.png" alt=""></a>
+        </div>
+        <div class="header_logo col-md-4">
+          <a href="index.html"><img src="img/header_logo.png" alt=""></a>
+        </div>
+        <div class="header_right col-md-4">
+          <div class="language"></div>
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-secondary dropdown-toggle rus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RUS</button>
+              <div class="dropdown-menu ">
+                <a class="dropdown-item eng" href="#">ENG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navi">
+      <div class="nav_block">
+        <nav class="navbar navbar-toggleable-md">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+          <div class="collapse navbar-collapse header_navbar" id="navbarNavAltMarkup">
+            <ul class=" navbar-nav">
+              <li class="nav-item nav-link active"><a href="#">Coins<span class="sr-only">(current)</span><img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link"><a href="#">Tokens <img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link"> <a href="#">All</a></li>
+            </ul>
+            <ul class="navbar-nav right_nav">
+              <li class="nav-item nav-link"><a href="top_ico.html"><span class="icon-cup"></span> Top ICO <img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link"><a href="coinin.html"><span class="icon-index"></span> Indexes <img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link"><a href="comparison.html"><span class="icon-vesi"></span> Comparison <img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link"><a href="portfolio.html"><span class="icon-port"></span> Portfolio</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section id="coinin">
+    <div class="block container-fluid">
+      <div class="coin_top_block">
+        <div class="coin_top_block_left">
+          <h2>Bitcoin, BTC <span>  $7608.060000000 </span><span>(  2.43%)</span></h2>
+        </div>
+        <div class="rank">
+          <h3>2</h3>
+          <p>Rank</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9">
+          <div class="coin_cup">
+            <div class="coin_cup_1">
+              <p>Market Cap</p>
+              <p>$ 243 349 086 207</p>
+            </div>
+            <div class="coin_cup_2">
+              <p>24 Hour Volume</p>
+              <p>$ 20 560 000 000</p>
+            </div>
+            <div class="coin_cup_3">
+              <p>Available Supply</p>
+              <p>$ 26 853 062</p>
+            </div>
+          </div>
+          <div class="coin_cup_buttons">
+            <button type="button" class="btn buy_btc" data-toggle="modal" data-target="#buy_btc">Buy BTC <img src="img/cart+_white.png" alt=""></button>
+            <button type="button" class="btn sell_btc">Sell BTC<img src="img/cart-_white.png" alt=""></button>
+            <button type="button" class="btn add_btc">Add to Portfolio<img src="img/portfolio.png" alt=""></button>
+          </div>
+        </div>
+        <div class="col-3">
+          <img class="img-fluid big_btc" src="img/btc_big.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container-fluid block">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="cryptocurrency-tab2" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bitcoin, BTC / Dollar, USD   Graph </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="portfolio-tab2" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bitcoin news</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="cryptocurrency-tab2">
+          <h2>Bitcoin, BTC / Dollar, USD</h2>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="portfolio-tab2">
+          <div class="row news">
+
+            <div class="col-2">
+              <img class="img-fluid" src="img/news_1.png" alt="">
+              <h4>Wall St. sinks further in volatile trading as bond yields rise</h4>
+              <p>NEW YORK (Reuters) - U.S. stocks plunged anew on Thursday in another trading session with big swings, as equities remained in a tug-of-war with bond yields, volatility remained ...</p>
+              <span>By Reuters - 30 minutes ago</span>
+            </div>
+
+            <div class="col-2">
+              <img class="img-fluid" src="img/news_1.png" alt="">
+              <h4>Wall St. sinks further in volatile trading as bond yields rise</h4>
+              <p>NEW YORK (Reuters) - U.S. stocks plunged anew on Thursday in another trading session with big swings, as equities remained in a tug-of-war with bond yields, volatility remained ...</p>
+              <span>By Reuters - 30 minutes ago</span>
+            </div>
+
+            <div class="col-2">
+              <img class="img-fluid" src="img/news_1.png" alt="">
+              <h4>Wall St. sinks further in volatile trading as bond yields rise</h4>
+              <p>NEW YORK (Reuters) - U.S. stocks plunged anew on Thursday in another trading session with big swings, as equities remained in a tug-of-war with bond yields, volatility remained ...</p>
+              <span>By Reuters - 30 minutes ago</span>
+            </div>
+
+            <div class="col-2">
+              <img class="img-fluid" src="img/news_1.png" alt="">
+              <h4>Wall St. sinks further in volatile trading as bond yields rise</h4>
+              <p>NEW YORK (Reuters) - U.S. stocks plunged anew on Thursday in another trading session with big swings, as equities remained in a tug-of-war with bond yields, volatility remained ...</p>
+              <span>By Reuters - 30 minutes ago</span>
+            </div>
+
+            <div class="col-2">
+              <img class="img-fluid" src="img/news_1.png" alt="">
+              <h4>Wall St. sinks further in volatile trading as bond yields rise</h4>
+              <p>NEW YORK (Reuters) - U.S. stocks plunged anew on Thursday in another trading session with big swings, as equities remained in a tug-of-war with bond yields, volatility remained ...</p>
+              <span>By Reuters - 30 minutes ago</span>
+            </div>
+
+            <div class="col-2">
+              <img class="img-fluid" src="img/news_1.png" alt="">
+              <h4>Wall St. sinks further in volatile trading as bond yields rise</h4>
+              <p>NEW YORK (Reuters) - U.S. stocks plunged anew on Thursday in another trading session with big swings, as equities remained in a tug-of-war with bond yields, volatility remained ...</p>
+              <span>By Reuters - 30 minutes ago</span>
+            </div>
+
+          </div>
+
+          <div class="btn-toolbar news_down_buttons" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-secondary"> < </button>
+              <button type="button" class="btn btn-secondary"> > </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="buy_btc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+          <div class="">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            <div class="modal_box">
+              <div class="modal_left">
+                <ul class="modal_left_up nav hidden" id="modal_tab" role="tablist">
+                  <li><a class="active" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Awaiting Deposit</a></li>
+                  <li><a id="exchange-tab" data-toggle="tab" href="#exchange" role="tab" aria-controls="exchange" aria-selected="false">Awaiting Exchange</a></li>
+                  <li><a id="complete-tab" data-toggle="tab" href="#complete" role="tab" aria-controls="complete" aria-selected="false">Complete</a></li>
+
+                  <!-- <li><a id="success-tab" data-toggle="tab" href="#success" role="tab" aria-controls="success" aria-selected="true">Awaiting Exchange</a></li> -->
+                </ul>
+
+                <ul class="modal_left_down">
+                  <li>
+                    <p>Deposit Min</p>
+                    <span>0.01337504 ETH</span>
+                  </li>
+                  <li>
+                    <p>Deposit Max</p>
+                    <span>6.0318324 ETH</span>
+                  </li>
+                  <li>
+                    <p>Miner Fee</p>
+                    <span>0.00065 BTC</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal_right">
+
+
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                    <div class="first_buy">
+                      <h2>Buy Bitcoin, BTC</h2>
+                      <div class="first_buy_drop">
+                        <div class="buy_b">
+                          <p>Pay With:</p>
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<img src="img/btc.png" alt="">  Ethereum, ETH  </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pay_b">
+                          <p>Buy:</p>
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<img src="img/btc.png" alt="">  Bitcoin, BTC  </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>1 ETH = 0.09677217 BTC</p>
+                      <form>
+                        <div class="form-group">
+                          <div class="form-inline">
+                            <div class="btc_adr">
+                              <label for="BTC Addres:">BTC Addres:</label>
+                              <input class="form-control" type="text">
+                            </div>
+                            <div class="btc_amount">
+                              <label for="BTC Amount:">BTC Amount:<span>optional</span></label>
+                              <input class="form-control" type="text">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Refund Address:</label><span class="email_option">optional</span>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <!-- <button type="submit" id="buy_btc_button">Buy BTC</button> -->
+                        <a id="buy_btc_button">Buy BTC</a>
+
+                      </form>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                    <h2>Buy Bitcoin, BTC</h2>
+                    <img src="img/QR1.png" alt="">
+                    <p class="send_btc">Send <span>5.20057722</span><img src="img/eth.png" alt=""><span>ETH</span> to</p>
+                    <p>0xd4eadcc14b41a146beffe19795347c668ec0777e</p>
+                    <p class="send_btc">It will be converted into <span>0.5 BTC</span><img src="img/btc.png" alt=""> to</p>
+                    <p>1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX</p>
+                    <button type="submit" id="awaiting-exchange">Buy BTC</button>
+                  </div>
+
+                  <div class="tab-pane fade" id="exchange" role="tabpanel" aria-labelledby="exchange-tab">
+                    <h2>Buy Bitcoin, BTC</h2>
+                    <img src="img/QR1.png" alt="">
+                    <p>Send 5.20057722 ETH to</p>
+                    <p>0xd4eadcc14b41a146beffe19795347c668ec0777e</p>
+                    <p>It will be converted into 0.5 BTC to</p>
+                    <p>1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX</p>
+                    <button type="submit" id="buy_btc_button_3">Buy BTC</button>
+                  </div>
+                  <div class="tab-pane fade" id="complete" role="tabpanel" aria-labelledby="complete-tab">
+                    <div id="success">
+                      <img src="img/success.png" alt="">
+                      <h2>Success!</h2>
+                      <p>0.5 <img src="img/btc.png" alt=""> have been delivered to you</p>
+                      <button type="button" name="button">Do Another Exchange</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="block container-fluid">
+      <div class="row">
+        <div class="col footer_1">
+          <p>2018 © Alpha Coins</br>All rights reserved</p>
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-secondary dropdown-toggle rus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RUS</button>
+            <div class="dropdown-menu ">
+              <a class="dropdown-item eng" href="#">ENG</a>
+            </div>
+          </div>
+        </div>
+        <div class="col footer_2">
+          <nav>
+            <ul>
+              <li><a href="#">Coins</a></li>
+              <li><a href="#">Tokens</a></li>
+              <li><a href="#">All</a></li>
+              <li><a href="#">Comparison</a></li>
+              <li><a href="#">Indexes</a></li>
+              <li><a href="#">Portfolio</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col footer_3">
+          <nav>
+            <ul>
+              <li><a href="#">OUR SERVICES</a></li>
+              <li><a href="#">Alpha Cash</a></li>
+              <li><a href="#">Alpha Wallet</a></li>
+              <li><a href="#">Alpha Change</a></li>
+              <li><a href="#">Alpha Card</a></li>
+              <li><a href="#">Alpha Pay</a></li>
+              <li><a href="#">Alpha Payments</a></li>
+              <li><a href="#">Alpha Bro0ker</a></li>
+              <li><a href="#">Alpha Academia</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col footer_4">
+          <nav>
+            <ul>
+              <li><a href="#">Newsleter</a></li>
+            </ul>
+          </nav>
+          <p>Subscribe to our newsletter and keep up latest news and events!</p>
+
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter your email">
+              <div class="input-group-addon"><img src="img/form_mail.png" alt=""></div>
+            </div>
+          </form>
+        </div>
+        <div class="col footer_5 col-md-auto">
+          <nav>
+            <ul>
+              <li><a href="#">Contact Information</a></li>
+            </ul>
+          </nav>
+          <p>Madrid, Spain, Marina 16-18, 08005</p>
+          <p>VAT ES B-64355506</p>
+          </br>
+          <p>Phone: +3680 00080 960</p>
+          <p>Email: help@alphacoins.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="js/libs.min.js"></script>
+  <script>
+    $('#buy_btc_button').click(function() {
+      // $('.first_buy').hide();
+      $("#first").removeClass('show active');
+      $('#deposit').addClass('show active');
+      $(".modal_left_up").show();
+      $('#modal_tab li:nth-child(1)').css('background-color', '#202129')
+
+    });
+    $('#awaiting-exchange').click(function() {
+      $("#deposit").removeClass('show active')
+      $("#exchange").addClass('show active');
+      $('#modal_tab li:nth-child(2)').css('background-color', '#202129')
+    });
+    $('#buy_btc_button_3').click(function() {
+      $("#exchange").removeClass('show active')
+      $("#complete").addClass('show active');
+      $('#modal_tab li:nth-child(3)').css('background-color', '#202129')
+    });
+  </script>
+</body>
+
+</html>

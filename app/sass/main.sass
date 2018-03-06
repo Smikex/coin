@@ -1,6 +1,7 @@
 @import "../libs/bootstrap/scss/bootstrap"
 @import "font.sass"
 body
+	font-family: OpenSans
 
 header
 	padding-top: 27px
@@ -56,10 +57,8 @@ header
 	padding-left: 0
 
 .dropdown-menu
-	margin: 0
 	min-width: 0
-	border-radius: 0
-	height: 41px
+
 .rus::before
 	content: ''
 	background: url('../img/ru.png')
@@ -106,6 +105,7 @@ header
 #table
 	font-family: OpenSans
 	white-space: nowrap
+	margin-bottom: 58px
 	.col
 		display: flex
 		align-self: center
@@ -239,7 +239,6 @@ footer
 	background-color: #2b2c35
 	font-family: OpenSans
 	font-size: 13px
-	margin-top: 58px
 footer ul
 	padding-left: 0
 footer .block
@@ -364,3 +363,536 @@ footer .input-group
 	padding: 20px 23px 0
 .ico_4.upcoming p:first-child
 	background-color: #ffb135
+
+
+	// section Portfolio
+
+
+#portfolio
+	padding-top: 59px
+	.tab-pane
+		h2
+			font-family: Proxima Nova
+			font-size: 25px
+			padding-top: 28px
+		p
+			font-size: 28px
+			font-weight: bold
+			color: #79b54d
+			padding-top: 6px
+			span
+				font-size: 18px
+	.nav-tabs
+		border-bottom: 2px solid #545454
+	.nav-link
+		color: #363636
+		padding: 12px 27px 12px 27px
+		margin-bottom: 17px
+		border-radius: 0
+	.nav-link.active
+		color: #fff
+		background-color: #79b54d
+	.block li
+		color: #fff
+		font-size: 13px
+		font-weight: bold
+		text-transform: uppercase
+	// .block ul
+	// 	margin-bottom: 17px
+
+	#portfolio-tab
+		background-color: #e5e5e5
+	#fake-tab, #cryptocurrency-tab
+		background: #f5f5f5
+	#cryptocurrency-tab.active, #portfolio-tab.active, #fake-tab.active
+		background-color: #79b54d
+#cryptocurrency-tab.active::after
+	content: ''
+	position: absolute
+	top: 44px
+	border: 8px solid transparent
+	border-top: 9px solid #79b54d
+	margin-left: -108px
+#portfolio-tab.active::after, #fake-tab.active::after
+	content: ''
+	position: absolute
+	top: 44px
+	border: 8px solid transparent
+	border-top: 9px solid #79b54d
+	margin-left: -70px
+#cryptocurrency-tab2.active::after
+	content: ''
+	position: absolute
+	top: 44px
+	border: 8px solid transparent
+	border-top: 9px solid #79b54d
+	margin-left: 110px
+#portfolio-tab2.active::after
+	content: ''
+	position: absolute
+	top: 44px
+	border: 8px solid transparent
+	border-top: 9px solid #79b54d
+	margin-left: -55px
+
+.portfolio_right_notif
+	display: flex
+	margin-left: 30%
+	align-self: center
+	p
+			font-size: 14px
+			font-weight: bold
+	p:nth-child(1)::before
+		content: ''
+		background: url('../img/notification.png') no-repeat
+		padding-left: 30px
+		padding-bottom: 10px
+		padding-top: 3px
+	p:nth-child(2)::before
+		content: ''
+		background: url('../img/settings.png') no-repeat
+		padding-left: 35px
+		padding-bottom: 10px
+		margin-left: 22px
+		padding-top: 3px
+.right_stock
+	padding-top: 16px
+	display: flex
+	p
+	 font-size: 11px
+	 font-weight: bold
+	 padding-left: 7px
+[type="checkbox"]
+		width: 20px
+		height: 20px
+.stock
+	border-bottom: 1px solid #dbdbdb
+	border-right: 1px solid #dbdbdb
+	border-left: 1px solid #dbdbdb
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+.stock.first_stock
+	border-top: 1px solid #dbdbdb
+.stock_left_check
+		[type="checkbox"]
+			margin: 14px 7px 5px 17px
+.stock_left_check p
+			display: inline-block
+			padding-left: 0
+			font-weight: normal
+			font-size: 13px
+			color: #28292b
+			margin-top: 15px
+			margin-bottom: 0
+.stock_left_check
+	display: flex
+	flex-direction: row
+	align-self: flex-end
+.stock_left_cost
+	margin-left: 42px
+	p:nth-child(1)
+		margin-bottom: 0
+		font-weight: bold
+.stock_right
+	p
+
+		font-size: 14px
+		font-weight: bold
+		margin-top: 8px
+		margin-right: 8px
+		padding-left: 5px
+		padding-right: 8px
+	img
+		display: flex
+		margin: auto
+.stock_price_down
+		border: solid 2px #dd1c1c
+		color: #dd1c1c
+.stock_price_up
+		border: solid 2px #79b54d
+		color: #79b54d
+.stock_coin_up
+		color: #79b54d
+		font-size: 14px
+		font-weight: bold
+.stock_coin_up::after
+		content: ''
+		background: url('../img/up.png') 5px 7px no-repeat
+		padding-left: 12px
+.stock_coin_down
+		color: #dd1c1c
+		font-size: 14px
+		font-weight: bold
+.stock_coin_down::after
+		content: ''
+		background: url('../img/down.png') 5px 7px no-repeat
+		padding-left: 12px
+.stock_buttons
+	padding-top: 13px
+	button
+		font-family: OpenSans
+		color: #222222
+		font-size: 13px
+		font-weight: bold
+		border: 0
+		background-color: #f5f5f5
+		padding-top: 10px
+		padding-left: 15px
+		padding-bottom: 8px
+		padding-right: 15px
+		img
+			padding-right: 3px
+	button:hover
+		background-color: #eaeaea
+	button:active
+		outline-color: transparent
+
+	span
+		color: #79b54d
+
+#comparison
+	padding-top: 54px
+	ul
+		padding-left: 0
+	li
+		list-style-type: none
+		font-size: 14px
+		margin-bottom: 2px
+	li:before
+		content: '\2014'
+		font-size: 15px
+		color: #7eb754
+		font-weight: bold
+		padding-right: 8px
+	li:nth-child(2)::before
+		color: #4ab9ce
+	li:nth-child(3)::before
+		color: #ff4504
+	li:nth-child(4)::before
+		color: #343f4b
+
+	p
+		font-size: 14px
+		font-weight: bold
+		color: #28292b
+		margin-bottom: 11px
+	h2
+		font-family: Proxima Nova
+		font-size: 35px
+		font-weight: 300
+.compare_up
+	border: solid 1px #dbdbdb
+	padding: 27px 65px 13px 32px
+	margin-top: 77px
+
+.compare_down
+	border: solid 1px #dbdbdb
+	border-top: transparent
+	padding: 24px 0px 44px 32px
+	button
+		// display: flex
+		// flex-direction: row
+		font-size: 14px
+		font-weight: bold
+	button:nth-child(2)
+		margin-left: -5px
+		padding: 15px
+		padding-top: 14px
+	.dropdown-toggle::after
+		margin-left: 52px
+
+#coinin
+	background-color: #1d1e26
+
+	padding-bottom: 61px
+	h2
+		font-family: Proxima Nova
+		font-size: 35px
+		font-weight: 300
+		color: #ffffff
+		span
+			color: #79b54d
+		span:nth-child(1)
+			padding-left: 10px
+		span:nth-child(2)
+			font-size: 28px
+.coin_cup
+	display: flex
+	flex-direction: row
+	margin-top: -5px
+.coin_cup_1, .coin_cup_2, .coin_cup_3
+	p
+		text-align: left
+		margin-bottom: 1px
+	p:nth-child(1)
+		color: #77787f
+	p:nth-child(2)
+		color: #ffffff
+.coin_cup_2
+	padding-left: 39px
+.coin_cup_3
+	padding-left: 42px
+.coin_cup_buttons
+	margin-top: 31px
+.buy_btc
+	background-color: #79b54d
+	font-size: 18px
+	font-weight: bold
+	color: #fff
+	border-radius: 0
+	padding: 14px 22px 16px 25px
+	img
+		padding-left: 9px
+		margin-top: -3px
+.sell_btc
+		background-color: #5079d0
+		font-size: 18px
+		font-weight: bold
+		color: #fff
+		border-radius: 0
+		padding: 14px 22px 16px 25px
+		margin-left: 4px
+		img
+			padding-left: 15px
+			margin-top: -3px
+.add_btc
+	background-color: #1d1e26
+	border: solid 1px #ffffff
+	color: #fff
+	padding: 14px 20px 14px 26px
+	font-size: 18px
+	margin-left: 34px
+	border-radius: 0
+	img
+		padding-left: 37px
+.big_btc
+	float: right
+	margin-top: -45px
+
+.coin_top_block
+	display: flex
+	flex-direction: row
+.coin_top_block_left
+	padding-top: 48px
+.rank
+	background-color: #79b54d
+	border-top: 8px solid #457224
+	color: #fff
+	margin-left: 34px
+	padding-top: 6px
+	padding-left: 10px
+	padding-right: 8px
+	text-align: center
+	padding-bottom: 17px
+	h3
+		font-size: 35px
+		font-weight: bold
+		margin-bottom: 1px
+	p
+		font-size: 16px
+.rank::after
+	content: ''
+	position: absolute
+	top: 56px
+	border: 27px solid transparent
+	border-bottom: 27px solid #1d1e26
+	margin-left: -28px
+
+#portfolio .news
+	padding-top: 38px
+	h4
+		font-size: 14px
+		color: #5272b8
+		font-weight: bold
+		padding-top: 25px
+		line-height: 20px
+	p
+		font-size: 13px
+		color: #1e1e1e
+		padding-top: 3px
+		line-height: 1.54
+		font-weight: normal
+		margin-bottom: 6px
+	span
+		font-size: 12px
+		color: #b5b5b5
+.news_down_buttons
+	padding-top: 37px
+	padding-bottom: 59px
+
+#buy_bt
+	ul
+		padding-left: 0
+
+.modal_box
+	display: flex
+	flex-direction: row
+.modal_left
+	font-size: 14px
+	color: #fff
+	display: flex
+	flex-direction: column
+	padding-left: 0
+	min-width: 207px
+	background-color: #2b2c35
+	ul
+		padding-left: 0
+	li
+		list-style-type: none
+.modal_left_up.nav
+	display: block
+.modal_left_up
+	font-weight: bold
+	margin-bottom: 0
+	width: 205px
+	li
+		text-transform: uppercase
+		padding: 29px 10px 24px 40px
+		border-bottom: 1px solid #51535c
+		a
+			color: #fff
+	li:nth-child(1)::after
+		content: ''
+		background: url('../img/modal_ico_1.png') 49px no-repeat
+		padding-left: 75px
+		padding-top: 24px
+	li:nth-child(2)::after
+		content: ''
+		background: url('../img/modal_ico_2.png') 30px no-repeat
+		padding-left: 70px
+		padding-top: 24px
+	li:nth-child(3)::after
+		content: ''
+		background: url('../img/modal_ico_3.png') 34px no-repeat
+		padding-left: 59px
+		padding-top: 3px
+.modal_left_down
+	background-color: #2b2c35
+	margin-bottom: 0
+	padding-top: 36px
+	li
+		padding-left: 40px
+		padding-bottom: 28px
+		// border-bottom: 1px dashed #fff
+		// width: 70%
+	p
+		margin-bottom: 0
+	span
+		font-family: Proxima Nova
+		color: #79b54d
+		font-weight: bold
+.modal_right
+	display: flex
+	flex-direction: column
+	align-items: center
+	align-self: center
+	padding: 36px 47px
+	form
+		padding-top: 33px
+
+	h2
+		font-family: Proxima Nova
+		font-size: 25px
+		margin-bottom: 20px
+	button
+		background-color: #79b54d
+		padding: 8px 26px
+		font-size: 20px
+		color: #fff
+		margin-top: 8px
+		border: 0
+.modal-content
+	width: 727px
+.first_buy
+	p
+		font-size: 14px
+		font-weight: bold
+		margin-bottom: 0
+	button
+		border-radius: 1px
+		background-color: #ffffff
+		border: solid 1px #e0e0e0
+		color: #222222
+		font-size: 14px
+		font-weight: bold
+.first_buy_drop
+	display: flex
+	flex-direction: row
+	padding-bottom: 12px
+.pay_b
+	margin-left: 20px
+.first_buy
+	label
+		font-size: 14px
+		color: #222222
+		text-align: left
+		justify-content: flex-start
+	.form-group
+		input
+			padding: 14px
+			margin-top: 12px
+		span
+			font-size: 12px
+			font-weight: bold
+			color: #c6c6c6
+			margin-left: 9px
+.btc_amount
+	margin-left: 20px
+	input
+		max-width: 145px
+.btc_adr
+	input
+		min-width: 248px
+.email_option
+	float: right
+
+
+#buy_btc_button, #exchange_button, #buy_btc_button_3
+	padding: 8px 26px
+	background-color: #79b54d
+	font-size: 20px
+	color: #fff
+	margin-top: 8px
+.fade.show.hidden, .modal_left_up.hidden
+	display: none
+#exchange
+	h2
+		color: red
+#success
+	padding: 65px
+	display: flex
+	flex-direction: column
+	align-items: center
+	img
+		padding-bottom: 25px
+
+#myTabContent .tab-pane
+	h2
+		margin-bottom: 0
+	img
+		padding: 20px 0
+	button
+		padding: 11px 39px
+	#dropdownMenuButton
+		padding: 8px 26px
+
+	p
+		font-size: 14px
+		img
+			padding: 0
+		span
+			font-weight: bold
+.send_btc
+	margin-bottom: 0 !important
+.dropdown button img
+	padding: 0 !important
+#buy_btc_button
+	padding: 11px 39px !important
+button.close
+	position: absolute
+	right: 0
+	padding: 8px
+
+button:hover
+	cursor: pointer
