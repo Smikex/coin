@@ -258,19 +258,6 @@ anychart.onDocumentReady(function() {
 });
 
 
-
-$('#headingOne').click(function() {
-  $("#col1 .col").css("border-left", "none");
-  $("#col2 .col").css("border-left", "1px solid #dbdbdb");
-  $("#col3 .col").css("border-left", "1px solid #dbdbdb");
-});
-$('#headingTwo').click(function() {
-  $("#col2 .col").css("border-left", "none");
-  $("#col1 .col").css("border-left", "1px solid #dbdbdb");
-  $("#col3 .col").css("border-left", "1px solid #dbdbdb");
-});
-$('#headingThree').click(function() {
-  $("#col3 .col").css("border-left", "none");
-  $("#col2 .col").css("border-left", "1px solid #dbdbdb");
-  $("#col1 .col").css("border-left", "1px solid #dbdbdb");
-});
+$('.table_coin').click(function() {
+  $(this).children("div").toggleClass("border_left_none");
+  });
