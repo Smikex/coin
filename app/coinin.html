@@ -8,13 +8,11 @@
   <title>Aplpha</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
 
-  <script>
-  </script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
 </head>
 
 <body>
@@ -118,6 +116,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="cryptocurrency-tab2">
           <h2>Bitcoin, BTC / Dollar, USD</h2>
+          <div id="coin_chart"></div>
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="portfolio-tab2">
           <div class="row news">
@@ -191,9 +190,9 @@
             <div class="modal_box">
               <div class="modal_left">
                 <ul class="modal_left_up nav hidden" id="modal_tab" role="tablist">
-                  <li><a class="active" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Awaiting Deposit</a></li>
-                  <li><a id="exchange-tab" data-toggle="tab" href="#exchange" role="tab" aria-controls="exchange" aria-selected="false">Awaiting Exchange</a></li>
-                  <li><a id="complete-tab" data-toggle="tab" href="#complete" role="tab" aria-controls="complete" aria-selected="false">Complete</a></li>
+                  <li><a class="active link_block" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Awaiting Deposit</a></li>
+                  <li><a class="link_block" id="exchange-tab" data-toggle="tab"  role="tab" aria-controls="exchange" aria-selected="false">Awaiting Exchange</a></li>
+                  <li><a class="link_block" id="complete-tab" data-toggle="tab"  role="tab" aria-controls="complete" aria-selected="false">Complete</a></li>
 
                   <!-- <li><a id="success-tab" data-toggle="tab" href="#success" role="tab" aria-controls="success" aria-selected="true">Awaiting Exchange</a></li> -->
                 </ul>
@@ -383,7 +382,6 @@
   <script src="js/libs.min.js"></script>
   <script>
     $('#buy_btc_button').click(function() {
-      // $('.first_buy').hide();
       $("#first").removeClass('show active');
       $('#deposit').addClass('show active');
       $(".modal_left_up").show();
@@ -394,12 +392,73 @@
       $("#deposit").removeClass('show active')
       $("#exchange").addClass('show active');
       $('#modal_tab li:nth-child(2)').css('background-color', '#202129')
+      $('#exchange-tab').attr("href", "#exchange");
+
     });
     $('#buy_btc_button_3').click(function() {
       $("#exchange").removeClass('show active')
       $("#complete").addClass('show active');
       $('#modal_tab li:nth-child(3)').css('background-color', '#202129')
+      $('#complete-tab').attr("href", "#complete");
     });
+  </script>
+  <script>
+
+
+  Highcharts.chart('coin_chart', {
+      chart: {
+          type: 'spline'
+
+      },
+
+      xAxis: {
+          type: 'datetime',
+          dateTimeLabelFormats: { // don't display the dummy year
+              month: '%e. %b',
+              year: '%b'
+          },
+          title: {
+              text: 'Date'
+          }
+      },
+      colors: [ "#79b54d"],
+      yAxis: {
+          title: {
+              text: 'Snow depth (m)'
+          },
+          min: 0
+      },
+      tooltip: {
+          headerFormat: '<b>{series.name}</b><br>',
+          pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+      },
+
+      plotOptions: {
+          spline: {
+              marker: {
+                  enabled: true
+              }
+          }
+      },
+
+      series: [{
+                  data: [
+              [Date.UTC(1970, 9, 29), 0],
+              [Date.UTC(1970, 10, 9), 0.4],
+              [Date.UTC(1970, 11, 1), 0.25],
+              [Date.UTC(1971, 0, 1), 1.66],
+              [Date.UTC(1971, 0, 10), 1.8],
+              [Date.UTC(1971, 1, 19), 1.76],
+              [Date.UTC(1971, 2, 25), 2.62],
+              [Date.UTC(1971, 3, 19), 2.41],
+              [Date.UTC(1971, 3, 30), 2.05],
+              [Date.UTC(1971, 4, 14), 1.7],
+              [Date.UTC(1971, 4, 24), 1.1],
+              [Date.UTC(1971, 5, 10), 0]
+          ]
+      },]
+  });
+
   </script>
 </body>
 

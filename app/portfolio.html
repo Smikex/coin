@@ -8,11 +8,9 @@
   <title>Aplpha</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
-
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script>
   </script>
 </head>
@@ -78,8 +76,12 @@
           <a class="nav-link" id="fake-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Fake Portfolio</a>
         </li>
         <div class="portfolio_right_notif">
-          <p>Notifications</p>
-          <p>Settings</p>
+          <a data-toggle="modal" data-target="#Notifications">
+            <p>Notifications</p>
+          </a>
+          <a data-toggle="modal" data-target="#Settings">
+            <p>Settings</p>
+          </a>
         </div>
       </ul>
       <div class="row">
@@ -90,7 +92,8 @@
             <h2>Evolutionary Bitcoin Value Dynamics</h2>
             <p>S68.000.00 <span>+4.06%</span></p>
 
-            <!-- <span>20:37:20 GMT - Real-time Data. ( Disclaimer )</span> -->
+<div id="portfolio_chart" style="height: 400px; min-width: 310px"></div>
+
           </div>
 
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="portfolio-tab">...</div>
@@ -155,13 +158,114 @@
           </div>
 
           <div class="stock_buttons">
-            <button type="button" name="button"><img src="img/plus.png" alt=""> Add a New Coin</button>
+            <button type="button" name="button" data-toggle="modal" data-target="#addCoin"><img src="img/plus.png" alt=""> Add a New Coin</button>
             <button type="button" name="button"><img src="img/del.png" alt=""> Delete</button>
           </div>
 
         </div>
       </div>
     </div>
+    <!-- modal -->
+    <div class="modal fade" id="addCoin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2>Add a Coin</h2>
+            <p>Update Bitcoin Holding Amount for Cryptocurrency Portfolio</p>
+            <p> You have <span>3.00230 BTC</span></p>
+            <p>Total value: <span class="total_val">$40.000</span></p>
+            <input type="text" placeholder="New Bitcoin Amount">
+            <button type="button" name="button"><img src="img/plus.png" alt=""> Add to Current Amount</button>
+            <button type="button" name="button"><img src="img/minus.png" alt=""> Subtract from Current Amount</button>
+            <button class="set_val" type="submit" data-dismiss="modal">Set Total Value</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Notifications" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal_left">
+            <h2>Notifications</h2>
+            <ul class="modal_left_down">
+              <li class="active_li ">
+                <p>Bitcoin Notifications</p> <button class="close">x</button> </li>
+              <li>
+                <p>NAV Coin</p>
+<button class="close">x</button>
+              </li>
+              <li>
+                <p>Ethereum</p>
+<button class="close">x</button>
+              </li>
+              <li>
+                <p>Qtum</p>
+<button class="close">x</button>
+              </li>
+            </ul>
+            <p>Add New<button ><img src="img/plus.png" alt=""></button></p>
+          </div>
+          <div class="modal_right">
+            <div class="">
+              <div class="first_buy">
+                <h2>Bitcoin Notifications</h2>
+                <div class="first_buy_drop">
+                  <div class="form-group">
+                    <p>Name:</p>
+                    <input type="text" class="form-control" id="exampleInputtest" aria-describedby="Name" placeholder="Bitcoin Notifications">
+                  </div>
+                  <div class="pay_b">
+                    <p>Select Coin:</p>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<img src="img/btc.png" alt="">  Bitcoin, BTC  </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="set_limit">
+                  <div class="high_limit"><p>Set High Limit: </p><p> $ Prise in USD</p><input type="number" placeholder="20 000"></div>
+                  <div class="low_limit"><p>Set Low Limit: </p><p> $ Prise in USD</p><input type="number" placeholder="20 000"></div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2>Settings</h2>
+            <p>Tab #1 Name:</p>
+            <input type="text" placeholder="Cryptocurrency Portfolio">
+            <p>Tab #2 Name:</p>
+            <input type="text" placeholder="Tokens Portfolio">
+            <p>Tab #3 Name:</p>
+            <input type="text" placeholder="Fake Portfolio">
+            <button class="set_val" type="submit" data-dismiss="modal">
+Save New Settings
+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
   </section>
 
@@ -239,6 +343,62 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/libs.min.js"></script>
   <script>
+
+
+  Highcharts.chart('portfolio_chart', {
+      chart: {
+          type: 'spline'
+
+      },
+
+      xAxis: {
+          type: 'datetime',
+          dateTimeLabelFormats: { // don't display the dummy year
+              month: '%e. %b',
+              year: '%b'
+          },
+          title: {
+              text: 'Date'
+          }
+      },
+      colors: [ "#79b54d"],
+      yAxis: {
+          title: {
+              text: 'Snow depth (m)'
+          },
+          min: 0
+      },
+      tooltip: {
+          headerFormat: '<b>{series.name}</b><br>',
+          pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+      },
+
+      plotOptions: {
+          spline: {
+              marker: {
+                  enabled: true
+              }
+          }
+      },
+
+      series: [{
+                  data: [
+              [Date.UTC(1970, 9, 29), 0],
+              [Date.UTC(1970, 10, 9), 0.4],
+              [Date.UTC(1970, 11, 1), 0.25],
+              [Date.UTC(1971, 0, 1), 1.66],
+              [Date.UTC(1971, 0, 10), 1.8],
+              [Date.UTC(1971, 1, 19), 1.76],
+              [Date.UTC(1971, 2, 25), 2.62],
+              [Date.UTC(1971, 3, 19), 2.41],
+              [Date.UTC(1971, 3, 30), 2.05],
+              [Date.UTC(1971, 4, 14), 1.7],
+              [Date.UTC(1971, 4, 24), 1.1],
+              [Date.UTC(1971, 5, 10), 0]
+          ]
+      },]
+  });
+
   </script>
 </body>
 

@@ -8,19 +8,17 @@
   <title>Aplpha</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="js/highstock.js"></script>
+  <script src="js/exporting.js"></script>
 </head>
-
 <body>
   <header>
     <div class="block container-fluid">
       <div class="header_block row align-items-center justify-content-between">
         <div class="app col-md-4">
-          <a href=""><img src="img/google.png" alt=""></a>
-          <a href=""><img src="img/apple_app.png" alt=""></a>
+          <a href=""><img src="img/apple.svg" alt=""></a>
+          <a href=""><img src="img/google play.svg" alt=""></a>
         </div>
         <div class="header_logo col-md-4">
           <a href="index.html"><img src="img/header_logo.png" alt=""></a>
@@ -61,7 +59,6 @@
       </div>
     </div>
   </header>
-
 
   <section id=table>
     <div class=" block container-fluid ">
@@ -117,14 +114,12 @@
             <div class="col">$ 65 000 000</div>
             <div class="col col_volume">26 920 870 BTC</div>
             <div class="col col_price_down">-24.00%</div>
-            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY</a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
+            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY </a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
           </div>
         </div>
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="chart_header">
-            <h2>Bitcoin Cash, BCH / Dollar, USD</h2>
-            <div id="container" style="width:100%; height: 500px;"></div>
-          </div>
+          <div id="container" style="height: 400px; min-width: 310px"></div>
+        </div>
         </div>
 
         <!-- third row -->
@@ -140,7 +135,7 @@
             <div class="col">$ 88 060 800</div>
             <div class="col col_volume">80 920 870 ETH</div>
             <div class="col col_price_up">28.03%</div>
-            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY</a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
+            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY </a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
           </div>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -151,24 +146,24 @@
         </div>
 
         <!-- four row -->
-        <div id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <div id="headingThree"   class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
           <div id="col3" class="table_coin">
             <div class="col col_first">
               <p>03.<img src="img/btc.png" alt=""><span>Bitcoin Cash, BCH</span></p>
             </div>
-            <div class="col col_market border_left_none">$ 80 900 680 000</div>
-            <div class="col col_price border_left_none"> 0.38080000</div>
-            <div class="col col_vwap border_left_none">0.3806</div>
-            <div class="col border_left_none">$ 88 060 800</div>
-            <div class="col col_volume border_left_none">80 920 870 ETH</div>
-            <div class="col col_price_up border_left_none">-8.63%</div>
-            <div class="col col_trading border_left_none"><a href="#"><img src="img/cart+.png" alt="">BUY</a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
+            <div class="col col_market">$ 80 900 680 000</div>
+            <div class="col col_price"> 0.38080000</div>
+            <div class="col col_vwap">0.3806</div>
+            <div class="col">$ 88 060 800</div>
+            <div class="col col_volume">80 920 870 ETH</div>
+            <div class="col col_price_up">-8.63%</div>
+            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY </a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
           </div>
-          <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+          <div id="collapseThree" class="collapse " aria-labelledby="headingThree" data-parent="#accordion">
             <div class="chart_header">
               <h2>Bitcoin Cash, BCH / Dollar, USD</h2>
-              <div id="container3" style="width:100%; height: 500px;"></div>
-            </div>
+              <div id="container3" style="height: 400px; min-width: 310px"></div>
+              </div>
           </div>
         </div>
 
@@ -184,7 +179,7 @@
             <div class="col">$ 88 060 800</div>
             <div class="col col_volume">80 920 870 ETH</div>
             <div class="col col_price_up">28.03%</div>
-            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY</a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
+            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY </a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
           </div>
           <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
             <div class="chart_header">
@@ -206,7 +201,7 @@
             <div class="col">$ 88 060 800</div>
             <div class="col col_volume">80 920 870 ETH</div>
             <div class="col col_price_up">28.03%</div>
-            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY</a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
+            <div class="col col_trading"><a href="#"><img src="img/cart+.png" alt="">BUY </a>/<a href="#"><img src="img/cart-.png" alt="">SELL</a></div>
           </div>
           <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
             <div class="chart_header">
@@ -287,12 +282,12 @@
       </div>
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/libs.min.js"></script>
-  <script>
-  </script>
+
+
 </body>
 
 </html>
