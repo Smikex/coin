@@ -153,6 +153,8 @@ header
 
 .table_coin
 	display: flex
+	border-left: 1px solid #dbdbdb
+	border-right: 1px solid #dbdbdb
 
 #accordion
 	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
@@ -177,6 +179,10 @@ header
  		min-width: 98px
 	div:nth-child(8)
  		min-width: 165px
+#table
+	.collapse
+		border-left: 1px solid #dbdbdb
+		border-right: 1px solid #dbdbdb
 .table_coin div:nth-child(8)
 	padding-left: 6px
 .main_row .col
@@ -1027,6 +1033,10 @@ a:hover
 		margin-top: 14px
 		padding: 10px
 
+
+// charts
+
+
 .highcharts-point-up
 	fill: #ef1740
 	stroke: #ff4c6e
@@ -1034,4 +1044,14 @@ a:hover
 	fill: #65bd24
 	stroke: #65bd24
 #compare_chart
-	padding-top: 20px
+	padding-bottom: 100px
+
+
+.highcharts-xaxis-grid .highcharts-grid-line
+	stroke-width: 1px
+	stroke: #d8d8d8
+.highcharts-xaxis .highcharts-tick
+	stroke-width: 1px
+	stroke: #d8d8d8
+// .highcharts-minor-grid-line
+// 	stroke-dasharray: 1, 1
