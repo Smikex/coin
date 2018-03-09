@@ -190,9 +190,9 @@
             <div class="modal_box">
               <div class="modal_left">
                 <ul class="modal_left_up nav hidden" id="modal_tab" role="tablist">
-                  <li><a class="active link_block" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Awaiting Deposit</a></li>
-                  <li><a class="link_block" id="exchange-tab" data-toggle="tab"  role="tab" aria-controls="exchange" aria-selected="false">Awaiting Exchange</a></li>
-                  <li><a class="link_block" id="complete-tab" data-toggle="tab"  role="tab" aria-controls="complete" aria-selected="false">Complete</a></li>
+                  <li><a class="active link_block" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Awaiting Deposit<img src="/img/modal_ico_1.png" alt=""></a></li>
+                  <li><a class="link_block" id="exchange-tab" data-toggle="tab" role="tab" aria-controls="exchange" aria-selected="false">Awaiting Exchange<img src="/img/modal_ico_2.png" alt=""></a></li>
+                  <li><a class="link_block" id="complete-tab" data-toggle="tab" role="tab" aria-controls="complete" aria-selected="false">Complete<img src="/img/modal_ico_3.png" alt=""></a></li>
 
                   <!-- <li><a id="success-tab" data-toggle="tab" href="#success" role="tab" aria-controls="success" aria-selected="true">Awaiting Exchange</a></li> -->
                 </ul>
@@ -403,67 +403,65 @@
     });
   </script>
   <script>
+    Highcharts.chart('coin_chart', {
+      rangeSelector: {
+        selected: 1
+      },
+      chart: {
+        type: 'area',
+      },
+      style: {
+        fontFamily: 'OpenSans',
+      },
+      title: {
+        text: 'Bitcoin, BTC / Dollar, USD'
+      },
+      colors: ['rgba(121, 181, 77, 0.5)', ],
 
-  Highcharts.chart('coin_chart', {
-    rangeSelector: {
-    selected: 1
-    },
-    chart: {
-       type: 'area',
-   },
-   style: {
-     fontFamily: 'OpenSans',
-    },
-   title: {
-       text: 'Bitcoin, BTC / Dollar, USD'
-   },
-   colors:
-     ['rgba(121, 181, 77, 0.5)', ] ,
-
-   xAxis: {
-       categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
-       tickmarkPlacement: 'on',
-       title: {
-           enabled: false
-       }
-   },
-   yAxis: {
-       title: {
-           // text: 'Billions'
-       },
-       labels: {
-           formatter: function () {
-               return this.value / 1000;
-           }
-       }
-   },
-   tooltip: {
-       split: true,
-       valueSuffix: ' millions'
-   },
-   plotOptions: {
-       area: {
-           stacking: 'normal',
-           lineColor: '#79b54d',
-           lineWidth: 1,
-           marker: {
-               lineWidth: 1,
-               lineColor: '#79b54d'
-           }
-       }
-   },
-   series: [{
-       name: 'Asia',
-       data: [502, 635, 809, 947, 1402, 3634, 5268]
-   } ],
-   legend: {
-    align: 'right',
-    verticalAlign: 'top',
-    layout: 'vertical',
-    x: 0,
-    y: 100
-}
-});
+      xAxis: {
+        categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+        tickmarkPlacement: 'on',
+        title: {
+          enabled: false
+        }
+      },
+      yAxis: {
+        title: {
+          // text: 'Billions'
+        },
+        labels: {
+          formatter: function() {
+            return this.value / 1000;
+          }
+        }
+      },
+      tooltip: {
+        split: true,
+        valueSuffix: ' millions'
+      },
+      plotOptions: {
+        area: {
+          stacking: 'normal',
+          lineColor: '#79b54d',
+          lineWidth: 1,
+          marker: {
+            lineWidth: 1,
+            lineColor: '#79b54d'
+          }
+        }
+      },
+      series: [{
+        name: 'Asia',
+        data: [502, 635, 809, 947, 1402, 3634, 5268]
+      }],
+      legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        layout: 'vertical',
+        x: 0,
+        y: 100
+      }
+    });
   </script>
 </body>
 
