@@ -2,6 +2,8 @@
 @import "font.sass"
 body
 	font-family: OpenSans
+	min-width: 1230px
+	overflow: auto
 
 header
 	padding-top: 27px
@@ -30,8 +32,8 @@ header
 		padding-bottom: 32px
 .block
 	width: 1200px
-	padding-right: 0
-	padding-left: 0
+	padding-right: 15px
+	padding-left: 15px
 .header_block
 	// height: 176px
 	display: flex
@@ -66,19 +68,48 @@ header
 	background: url('../img/ru.png')
 	padding-left: 22px
 	margin-right: 11px
-.dropdown-item
-	padding-top: 1px
+.header_right
+	.dropdown-item
+		padding-left: 58px
 .eng::before
 	content: ''
-	background: url('../img/eng.png') no-repeat
-	padding-left: 25px
-	margin-right: 16px
-	margin-left: -7px
+	background: url('../img/eng.png')  no-repeat
+	position: absolute
+	width: 25px
+	height: 25px
+	top: 15px
+	left: 15px
+footer
+	.dropdown-item
+		padding-left: 53px
+	.eng::before
+		content: ''
+		background: url('../img/eng.png')  no-repeat
+
+
+
 .header_navbar
+	display: flex
+	width: 100%
 	justify-content: space-between
 	padding-top: 8px
-.nav_block a
-	color: #ffffff
+.navbar-nav
+	flex-direction: row
+.nav_block
+	a
+		color: #ffffff
+
+	li:nth-child(-n+2)::after
+		content: ''
+		padding-left: 60px
+		background: url('../img/dots.png') 28px no-repeat
+.right_nav
+	li:nth-child(3)::after
+		content: ''
+		padding-left: 60px
+		background: url('../img/dots.png') 28px no-repeat
+
+
 .nav-item.nav-link img
 	padding-left: 11px
 .empty_link
@@ -170,13 +201,13 @@ header
 	div:nth-child(3)
 		min-width: 115px
 	div:nth-child(4)
- 		min-width: 135px
+ 		min-width: 120px
 	div:nth-child(5)
 		min-width: 126px
 	div:nth-child(6)
-		min-width: 174px
+		min-width: 160px
 	div:nth-child(7)
- 		min-width: 98px
+ 		min-width: 90px
 	div:nth-child(8)
  		min-width: 165px
 #table
@@ -213,17 +244,27 @@ header
 .col_price_up::after
 	content: ''
 	background: url('../img/up.png') 100%  37% no-repeat
-	padding-left: 12px
+	height: 10px
+	width: 10px
 .col_price_down::after
 	content: ''
 	background: url('../img/down.png') 100%  37% no-repeat
-	padding-left: 12px
+	height: 10px
+	width: 10px
 .col_first
 	border-left: none !important
 .col_trading
 	border-right: none !important
 	a
 		padding-right: 5px
+		&:nth-child(1)::before
+			content: ''
+			padding-left: 30px
+			background: url('../img/cart+.png') no-repeat
+		&:nth-child(2)::before
+			content: ''
+			padding-left: 33px
+			background: url('../img/cart-.png')  5px no-repeat
 .drop
   border: 1px solid #dbdbdb
 .drop .table_coin
@@ -256,6 +297,9 @@ footer
 
 footer ul
 	padding-left: 0
+	line-height: 2.92
+	font-weight: bold
+	text-transform: uppercase
 footer .block
 	padding-top: 58px
 .footer_1
@@ -289,17 +333,31 @@ footer ul a
 .footer_5 ul
 	padding-left: 0
 footer
+	.input-group-addon
+		padding: 0
 	.form-control,	.input-group-addon
 		background-color: #2b2c35
 footer .input-group
 	margin-left: 0
 	width: 217px
 	border: solid 1px rgba(219, 219, 219, 0.13)
+	&:hover
+		border: 1px solid #79b54d
+	input:focus
+		background-color: #2b2c35
+		border: 1px solid rgba(0, 0, 0, 0.15)
+	button
+		background-color: #2b2c35
+		border: 0
+		padding: 8px
+		outline: transparent
+
 
 // top_ico
 
 #top_ico
- 	h2
+	padding-bottom: 78px
+	h2
 		padding-top: 70px
 		font-family: Proxima Nova
   	font-size: 35px
@@ -390,6 +448,7 @@ footer .input-group
 			font-family: Proxima Nova
 			font-size: 25px
 			padding-top: 28px
+			margin-bottom: 6px !important
 		p
 			font-size: 28px !important
 			font-weight: bold
@@ -397,6 +456,12 @@ footer .input-group
 			padding-top: 6px
 			span
 				font-size: 18px
+		p:nth-child(3)
+			color: #222222
+			font-size: 14px !important
+			span
+				font-size: 14px
+				font-weight: normal
 	.nav-tabs
 		border-bottom: 2px solid #545454
 	.nav-link
@@ -452,7 +517,7 @@ footer .input-group
 
 .portfolio_right_notif
 	display: flex
-	margin-left: 30%
+	margin-left: 27%
 	align-self: center
 	p
 			font-size: 14px
@@ -742,6 +807,15 @@ footer .input-group
 	ul
 		padding-left: 0
 
+.modal-dialog
+	position: absolute
+	top: 40%
+	left: 40%
+	transform: translate(-50%,-40%) !important
+	margin: 0
+.modal-dialog.modal_small
+	left: 50%
+
 .modal_box
 	display: flex
 	flex-direction: row
@@ -916,10 +990,12 @@ button.close
 	position: absolute
 	right: 0
 	padding: 8px
+	outline-color: transparent
 
 button:hover
 	cursor: pointer
 a:hover
+	text-decoration: none
 	cursor: pointer
 .border_left_none
 	border-left: none !important
@@ -1060,3 +1136,17 @@ a:hover
 	stroke: #d8d8d8
 // .highcharts-minor-grid-line
 // 	stroke-dasharray: 1, 1
+.highcharts-area
+	fill: rgba(121, 181, 77, 0.5)
+
+#coin_chart
+	padding: 30px 0
+	.highcharts-area
+		fill: rgba(121, 181, 77, 0.3)
+
+.highcharts-halo.highcharts-color-0
+		opacity: 1 !important
+		fill: #fff !important
+		fill-opacity: 1 !important
+		stroke: #fff !important
+		background: #000 !important

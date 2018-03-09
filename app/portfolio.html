@@ -8,25 +8,23 @@
   <title>Aplpha</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/series-label.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script>
-  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="js/highstock.js"></script>
+  <script src="js/exporting.js"></script>
 </head>
 
 <body>
   <header>
     <div class="block container-fluid">
       <div class="header_block row align-items-center justify-content-between">
-        <div class="app col-md-4">
-          <a href=""><img src="img/google.png" alt=""></a>
-          <a href=""><img src="img/apple_app.png" alt=""></a>
+        <div class="app col">
+          <a href=""><img src="img/apple.svg" alt=""></a>
+          <a href=""><img src="img/google play.svg" alt=""></a>
         </div>
-        <div class="header_logo col-md-4">
+        <div class="header_logo col">
           <a href="index.html"><img src="img/header_logo.png" alt=""></a>
         </div>
-        <div class="header_right col-md-4">
+        <div class="header_right col">
           <div class="language"></div>
           <div class="input-group">
             <div class="input-group-btn">
@@ -41,20 +39,20 @@
     </div>
     <div class="navi">
       <div class="nav_block">
-        <nav class="navbar navbar-toggleable-md">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar ">
+          <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar_top" aria-controls="navbar_top" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
-				  </button>
-          <div class="collapse navbar-collapse header_navbar" id="navbarNavAltMarkup">
+				  </button> -->
+          <div class=" header_navbar" id="navbar_top">
             <ul class=" navbar-nav">
-              <li class="nav-item nav-link active"><a href="#">Coins<span class="sr-only">(current)</span><img src="img/dots.png" alt=""></a></li>
-              <li class="nav-item nav-link"><a href="#">Tokens <img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link active"><a href="#">Coins<span class="sr-only">(current)</span></a></li>
+              <li class="nav-item nav-link"><a href="#">Tokens</a></li>
               <li class="nav-item nav-link"> <a href="#">All</a></li>
             </ul>
             <ul class="navbar-nav right_nav">
-              <li class="nav-item nav-link"><a href="top_ico.html"><span class="icon-cup"></span> Top ICO <img src="img/dots.png" alt=""></a></li>
-              <li class="nav-item nav-link"><a href="coinin.html"><span class="icon-index"></span> Indexes <img src="img/dots.png" alt=""></a></li>
-              <li class="nav-item nav-link"><a href="comparison.html"><span class="icon-vesi"></span> Comparison <img src="img/dots.png" alt=""></a></li>
+              <li class="nav-item nav-link"><a href="top_ico.html"><span class="icon-cup"></span> Top ICO</a></li>
+              <li class="nav-item nav-link"><a href="indexes.html"><span class="icon-index"></span> Indexes</a></li>
+              <li class="nav-item nav-link"><a href="comparison.html"><span class="icon-vesi"></span> Comparison</a></li>
               <li class="nav-item nav-link"><a href="portfolio.html"><span class="icon-port"></span> Portfolio</a></li>
             </ul>
           </div>
@@ -88,9 +86,10 @@
 
         <div class="col-9 tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="cryptocurrency-tab">
-
             <h2>Evolutionary Bitcoin Value Dynamics</h2>
             <p>S68.000.00 <span>+4.06%</span></p>
+
+            <P>20:37:20 GMT <span>- Real-time Data. ( Disclaimer )</span></P>
 
 <div id="portfolio_chart" style="height: 400px; min-width: 310px"></div>
 
@@ -167,7 +166,7 @@
     </div>
     <!-- modal -->
     <div class="modal fade" id="addCoin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal_small" role="document">
         <div class="modal-content">
           <div class="">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -244,7 +243,7 @@
     </div>
 
     <div class="modal fade" id="Settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal_small" role="document">
         <div class="modal-content">
           <div class="">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -296,7 +295,7 @@ Save New Settings
         <div class="col footer_3">
           <nav>
             <ul>
-              <li><a href="#">OUR SERVICES</a></li>
+              <li>OUR SERVICES</li>
               <li><a href="#">Alpha Cash</a></li>
               <li><a href="#">Alpha Wallet</a></li>
               <li><a href="#">Alpha Change</a></li>
@@ -311,7 +310,7 @@ Save New Settings
         <div class="col footer_4">
           <nav>
             <ul>
-              <li><a href="#">Newsleter</a></li>
+              <li>Newsleter</li>
             </ul>
           </nav>
           <p>Subscribe to our newsletter and keep up latest news and events!</p>
@@ -319,14 +318,14 @@ Save New Settings
           <form>
             <div class="input-group">
               <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter your email">
-              <div class="input-group-addon"><img src="img/form_mail.png" alt=""></div>
+              <div class="input-group-addon"><button><img src="img/form_mail.png" alt=""></button></div>
             </div>
           </form>
         </div>
         <div class="col footer_5 col-md-auto">
           <nav>
             <ul>
-              <li><a href="#">Contact Information</a></li>
+              <li>Contact Information</li>
             </ul>
           </nav>
           <p>Madrid, Spain, Marina 16-18, 08005</p>
@@ -338,68 +337,10 @@ Save New Settings
       </div>
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/libs.min.js"></script>
-  <script>
 
-
-  Highcharts.chart('portfolio_chart', {
-      chart: {
-          type: 'spline'
-
-      },
-
-      xAxis: {
-          type: 'datetime',
-          dateTimeLabelFormats: { // don't display the dummy year
-              month: '%e. %b',
-              year: '%b'
-          },
-          title: {
-              text: 'Date'
-          }
-      },
-      colors: [ "#79b54d"],
-      yAxis: {
-          title: {
-              text: 'Snow depth (m)'
-          },
-          min: 0
-      },
-      tooltip: {
-          headerFormat: '<b>{series.name}</b><br>',
-          pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
-      },
-
-      plotOptions: {
-          spline: {
-              marker: {
-                  enabled: true
-              }
-          }
-      },
-
-      series: [{
-                  data: [
-              [Date.UTC(1970, 9, 29), 0],
-              [Date.UTC(1970, 10, 9), 0.4],
-              [Date.UTC(1970, 11, 1), 0.25],
-              [Date.UTC(1971, 0, 1), 1.66],
-              [Date.UTC(1971, 0, 10), 1.8],
-              [Date.UTC(1971, 1, 19), 1.76],
-              [Date.UTC(1971, 2, 25), 2.62],
-              [Date.UTC(1971, 3, 19), 2.41],
-              [Date.UTC(1971, 3, 30), 2.05],
-              [Date.UTC(1971, 4, 14), 1.7],
-              [Date.UTC(1971, 4, 24), 1.1],
-              [Date.UTC(1971, 5, 10), 0]
-          ]
-      },]
-  });
-
-  </script>
 </body>
 
 </html>
