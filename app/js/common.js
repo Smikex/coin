@@ -2,6 +2,9 @@ $('.table_coin').click(function() {
   $(this).children("div").toggleClass("border_left_none");
 });
 
+$('#last_table').click(function() {
+  $(this).toggleClass("last_table");
+});
 // page indexes
 $('#buy_btc_button').click(function() {
   $("#first").removeClass('show active');
@@ -24,6 +27,11 @@ $('#buy_btc_button_3').click(function() {
   $('#complete-tab').attr("href", "#complete");
 });
 
+$(document).ready(function () {
+  $("#checkbox_check").click(function () {
+      $(".checkBoxClass").attr('checked', this.checked);
+  });
+});
 
 
 // highcharts first
@@ -31,7 +39,10 @@ $('#buy_btc_button_3').click(function() {
 $.getJSON('js/data.json', function(data) {
 
   // create the chart
-  Highcharts.stockChart('container', {
+  Highcharts.stockChart('graph1', {
+    credits: {
+    enabled: false
+},
     navigator: {
       enabled: false
     },
@@ -101,6 +112,9 @@ $.getJSON('js/data.json', function(data) {
 
   // create the chart
   Highcharts.stockChart('graph2', {
+    credits: {
+    enabled: false
+},
     navigator: {
       enabled: false
     },
@@ -166,7 +180,10 @@ $.getJSON('js/data.json', function(data) {
 
 $.getJSON('js/data.json', function(data) {
 
-  Highcharts.stockChart('container3', {
+  Highcharts.stockChart('graph3', {
+    credits: {
+    enabled: false
+},
     navigator: {
       enabled: false
     },
@@ -228,6 +245,147 @@ $.getJSON('js/data.json', function(data) {
 
 });
 
+$.getJSON('js/data.json', function(data) {
+
+  // create the chart
+  Highcharts.stockChart('graph4', {
+    credits: {
+    enabled: false
+},
+    navigator: {
+      enabled: false
+    },
+
+    title: {
+      text: 'Bitcoin Cash, BCH /  Dollar, USD',
+      align: 'left',
+      style: {
+        "color": "#222222",
+        "fontSize": "35px",
+        "fontWeight": "300"
+      }
+    },
+    style: {
+      "fontFamily": "OpenSans",
+    },
+
+    yAxis: {
+      opposite: false,
+      offset: 60,
+      labels: {
+        align: 'left',
+        x: 0,
+        style: {
+          "fontSize": "12px",
+          "color": "#28292b",
+
+        }
+      }
+    },
+
+    rangeSelector: {
+      buttonTheme: {
+        visibility: 'hidden'
+      },
+      selected: 1,
+      labelStyle: {
+        visibility: 'hidden'
+      },
+
+    },
+    series: [{
+      type: 'candlestick',
+      name: 'AAPL Stock Price',
+      data: data,
+      dataGrouping: {
+        units: [
+          [
+            'week', // unit name
+            [1] // allowed multiples
+          ],
+          [
+            'month', [1, 2, 3, 4, 6]
+          ]
+        ]
+      }
+    }]
+  });
+
+
+});
+
+$.getJSON('js/data.json', function(data) {
+
+  // create the chart
+  Highcharts.stockChart('graph5', {
+    credits: {
+    enabled: false
+},
+    navigator: {
+      enabled: false
+    },
+
+    title: {
+      text: 'Bitcoin Cash, BCH /  Dollar, USD',
+      align: 'left',
+      style: {
+        "color": "#222222",
+        "fontSize": "35px",
+        "fontWeight": "300"
+      }
+    },
+    style: {
+      "fontFamily": "OpenSans",
+    },
+
+    yAxis: {
+      opposite: false,
+      offset: 60,
+      labels: {
+        align: 'left',
+        x: 0,
+        style: {
+          "fontSize": "12px",
+          "color": "#28292b",
+
+        }
+      }
+    },
+
+    rangeSelector: {
+      buttonTheme: {
+        visibility: 'hidden'
+      },
+      selected: 1,
+      labelStyle: {
+        visibility: 'hidden'
+      },
+
+    },
+    series: [{
+      type: 'candlestick',
+      name: 'AAPL Stock Price',
+      data: data,
+      dataGrouping: {
+        units: [
+          [
+            'week', // unit name
+            [1] // allowed multiples
+          ],
+          [
+            'month', [1, 2, 3, 4, 6]
+          ]
+        ]
+      }
+    }]
+  });
+
+
+});
+
+
+
+
 // chart comparison
 var seriesOptions = [],
   seriesCounter = 0,
@@ -240,6 +398,9 @@ var seriesOptions = [],
 function createChart() {
 
   Highcharts.stockChart('compare_chart', {
+    credits: {
+    enabled: false
+},
 
     chart: {
       // spacingTop: 10,
@@ -290,7 +451,7 @@ function createChart() {
     },
     colors: ['#79b54d', '#414b56', '#ff4504'],
     yAxis: {
-      opposite:false,
+      opposite: false,
       labels: {
         formatter: function() {
           return (this.value > 0 ? ' + ' : '') + this.value + '%';
@@ -311,7 +472,7 @@ function createChart() {
         compare: 'percent',
         showInNavigator: true,
         marker: {
-            enabled: true,
+          enabled: true,
           fillColor: '#FFFFFF',
           radius: 4,
           lineWidth: 2,
@@ -367,6 +528,9 @@ $.getJSON('js/indexes-c.json', function(data) {
 
   // Create the chart
   Highcharts.stockChart('coin_chart', {
+    credits: {
+    enabled: false
+},
     navigator: {
       enabled: false
     },
@@ -392,18 +556,19 @@ $.getJSON('js/indexes-c.json', function(data) {
         }
       }
     },
-      yAxis: {
-         opposite:false,
-         offset: 60,
-        labels: {
-            align: 'left',
-            x: 0,
-            style: {
-              "fontSize": "12px",
-                "color": "#28292b",
+    yAxis: {
+      opposite: false,
+      offset: 60,
+      labels: {
+        align: 'left',
+        x: 0,
+        style: {
+          "fontSize": "12px",
+          "color": "#28292b",
 
-            }          }
-      },
+        }
+      }
+    },
 
     series: [{
         name: 'AAPL Stock Price',
@@ -483,71 +648,75 @@ $.getJSON('js/indexes-c.json', function(data) {
 
 
 
-  $.getJSON('js/portfoli-c.json', function (data) {
+$.getJSON('js/portfoli-c.json', function(data) {
 
-    // Create the chart
-    Highcharts.stockChart('portfolio_chart', {
-      navigator: {
-        enabled: false
-      },
-        rangeSelector: {
-            selected: 1
-        },
-
-        navigation: {
-    buttonOptions: {
-        enabled: false
-    }
+  // Create the chart
+  Highcharts.stockChart('portfolio_chart', {
+    credits: {
+    enabled: false
 },
-        title: {
-            text: ' '
+    navigator: {
+      enabled: false
+    },
+    rangeSelector: {
+      selected: 1
+    },
+
+    navigation: {
+      buttonOptions: {
+        enabled: false
+      }
+    },
+    title: {
+      text: ' '
+    },
+    colors: ["#79b54d"],
+    yAxis: {
+      opposite: false,
+      offset: 60,
+      labels: {
+        align: 'left',
+        x: 0,
+        style: {
+          "fontSize": "12px",
+          "color": "#28292b",
+        }
+      }
+    },
+    series: [{
+      marker: {
+        fillColor: '#FFFFFF',
+        lineWidth: 2,
+        lineColor: null,
+        symbol: 'circle',
+        states: {
+          hover: {
+            radiusPlus: 3,
+            lineWidthPlus: 2,
+            // lineWidth: "5px",
+            // lineColor: "#fff"
+          }
         },
-         colors: [ "#79b54d"],
-         yAxis: {
-            opposite:false,
-            offset: 60,
-           labels: {
-               align: 'left',
-               x: 0,
-               style: {
-                 "fontSize": "12px",
-                   "color": "#28292b",
-               }          }
-         },
-        series: [{
-          marker: {
-            fillColor: '#FFFFFF',
-            lineWidth: 2,
-            lineColor: null,
-            symbol: 'circle',
-            states: {
-              hover: {
-                radiusPlus: 3,
-                lineWidthPlus: 2,
-                // lineWidth: "5px",
-                // lineColor: "#fff"
-              }
-            },
-          },
-            name: ' ',
-            data: data,
-            type: 'areaspline',
-            threshold: null,
-            tooltip: {
-                valueDecimals: 2
-            },
-            fillColor: {
-                linearGradient: {
-                    x1: 0,
-                    y1: 0,
-                    x2: 0,
-                    y2: 1
-                },
-                stops: [
-                    [0, Highcharts.getOptions().colors[0]],
-                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                ]
-            }
-        }]
-    });
+      },
+      name: ' ',
+      data: data,
+      type: 'areaspline',
+      threshold: null,
+      tooltip: {
+        valueDecimals: 2
+      },
+      fillColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        },
+        stops: [
+          [0, Highcharts.getOptions().colors[0]],
+          [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+        ]
+      }
+    }]
+  });
 });

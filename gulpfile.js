@@ -10,6 +10,7 @@ var gulp       = require('gulp'), // Подключаем Gulp
 	pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
 	cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
 	autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
+	// fileinclude    = require('gulp-file-include');
 	// rigger = require('gulp-rigger');
 
 gulp.task('sass', function(){ // Создаем таск Sass
@@ -31,9 +32,9 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
-// 'app/libs/jquery/dist/jquery.min.js',// Берем jQuery
-// 'app/libs/tether/dist/js/tether.min.js',
-// 'app/libs/bootstrap/dist/js/bootstrap.min.js',
+//  'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
+// 'app/libs/highstock.js',
+// 'app/libs/exporting.js',
 
 'app/js/common.js'
 		])
@@ -48,6 +49,15 @@ gulp.task('css-libs', ['sass'], function() {
 		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
 		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 });
+
+// gulp.task('normal-fileinclude', function() {
+//   gulp.src(['app/*.html'])
+//     .pipe(fileinclude({
+//       prefix: '@@',
+//       basepath: 'app/html'
+//     }))
+//     .pipe(gulp.dest('app/_normal'));
+// });
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
