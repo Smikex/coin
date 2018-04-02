@@ -1,3 +1,69 @@
+// select2
+
+var data = [{
+  id: 0,
+  text: 'Bitcoin',
+  value: '800',
+  curency: 'BTH'
+},
+{
+  id: 1,
+  text: 'Ethereum',
+  value: '1200',
+  curency: 'ETH'
+},
+{
+  id: 2,
+  text: 'Bitcoin cash',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 3,
+  text: 'Ripple',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 4,
+  text: 'Binance',
+  value: '500',
+  curency: 'BTC'
+
+}
+];
+$(".select_buy").select2({
+data: data,
+ templateResult: formatState,
+templateSelection: formatSelect,
+});
+$(".select_pay").select2({
+  data: data,
+   templateResult: formatState,
+  templateSelection: formatSelect,
+  });
+function formatState(state) {
+  if (!state.id) {
+    return state.text;
+  }
+  var $state = $(
+    '<span class="selected_span"><img class="selected_ico" src="img/select_img/' + state.text.toLowerCase() +
+    '.png" /> ' + state.text + ', <span>' + state.curency +' </span></span>'
+  );
+  return $state;
+};
+
+function formatSelect(state) {
+  if (!state.id) {
+    return state.text;
+  }
+  var $state = $(
+    '<span class="selected_span"><img class="selected_ico" src="img/select_img/' + state.text.toLowerCase() +
+    '.png" /> ' + state.text + ', <span>' + state.curency +' </span></span>'
+  );
+  return $state;
+};
+
 $('.table_coin').click(function() {
   $(this).children("div").toggleClass("border_left_none");
 });

@@ -25,7 +25,7 @@
           <a href="index.html"><img src="img/header_logo.png" alt=""></a>
         </div>
         <div class="header_right col">
-          <div class="language"></div>
+          <a href="https://www.facebook.com"><div class="language"></div></a>
           <div class="input-group">
             <div class="input-group-btn">
               <button type="button" class="btn btn-secondary dropdown-toggle rus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RUS</button>
@@ -105,7 +105,7 @@
         <!-- first table-->
 
         <div id="headingOne" class="collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <div id="col1" class="table_coin">
+          <div  class="table_coin">
             <div class="col col_first">
               <a ><p>01.<img src="img/btc.png" alt=""><span>Bitcoin, BTC</span></p></a>
             </div>
@@ -127,7 +127,7 @@
         <!-- second table-->
 
         <div id="headingTwo" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <div id="col2" class="table_coin">
+          <div  class="table_coin">
             <div class="col col_first">
               <a ><p>02.<img src="img/btc.png" alt=""><span>Ethereum, ETH</span></p></a>
             </div>
@@ -148,7 +148,7 @@
 
         <!-- third table -->
         <div id="headingThree" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <div id="col3" class="table_coin">
+          <div  class="table_coin">
             <div class="col col_first">
               <a ><p>03.<img src="img/btc.png" alt=""><span>Bitcoin Cash, BCH</span></p></a>
             </div>
@@ -251,39 +251,26 @@
                   </ul>
                 </div>
                 <div class="modal_right">
-
-
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
-                      <div class="first_buy">
                         <h2>Buy Bitcoin, BTC</h2>
+                      <div class="first_buy">
+
                         <div class="first_buy_drop">
                           <div class="buy_b">
                             <p>Pay With:</p>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <img src="img/btc.png" alt="">  Ethereum, ETH  </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown  select_buy">
                               </div>
                             </div>
-                          </div>
+                         
                           <div class="pay_b">
                             <p>Buy:</p>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <img src="img/btc.png" alt="">  Bitcoin, BTC  </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown select_pay">
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <p>1 ETH = 0.09677217 BTC</p>
+
+                        <p  class="select_pay_selected__p">1 ETH = 0.09677217 BTC</p>
                         <form>
                           <div class="form-group">
                             <div class="form-inline">
@@ -307,7 +294,6 @@
                         </form>
                       </div>
                     </div>
-
                     <div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
                       <h2>Buy Bitcoin, BTC</h2>
                       <img src="img/QR1.png" alt="">
@@ -416,6 +402,8 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script src="js/libs.min.js"></script>
 
 </body>

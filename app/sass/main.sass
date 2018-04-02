@@ -4,7 +4,10 @@ body
 	font-family: OpenSans
 	min-width: 1230px
 	overflow: auto
-
+a:focus
+	outline: none
+span:focus
+	outline: none	
 header
 	padding-top: 27px
 	nav a:hover
@@ -108,8 +111,8 @@ footer
 		content: ''
 		padding-left: 60px
 		background: url('../img/dots.png') 28px no-repeat
-
-
+.navbar-nav .nav-link
+	white-space: nowrap
 .nav-item.nav-link img
 	padding-left: 11px
 .empty_link
@@ -191,8 +194,16 @@ footer
 	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
 
 	text-transform: uppercase
+.table_coin
+	.col
+		justify-content: flex-end
+	.col_first
+		justify-content: flex-start
 .main_row
-		background-image: linear-gradient(to bottom, #f0f0f0, #ffffff 99%)
+	background-image: linear-gradient(to bottom, #f0f0f0, #ffffff 99%)
+	.col
+		justify-content: center
+
 .table_coin
 	div:nth-child(1)
 		min-width: 232px
@@ -907,6 +918,7 @@ footer .input-group
 .modal-content
 	width: 727px
 .first_buy
+
 	p
 		font-size: 14px
 		font-weight: bold
@@ -971,7 +983,7 @@ footer .input-group
 
 #myTabContent .tab-pane
 	h2
-		margin-bottom: 0
+		// margin-bottom: 0
 	img
 		padding: 20px 0
 	button
@@ -981,6 +993,7 @@ footer .input-group
 
 	p
 		font-size: 14px
+		margin-bottom: 10px
 		img
 			padding: 0
 		span
@@ -1155,3 +1168,21 @@ a:hover
 		fill-opacity: 1 !important
 		stroke: #fff !important
 		background: #000 !important
+// select2
+.select2-container .select2-selection--single
+	width: 203px
+	height: 47px !important
+	border-radius: 0 !important
+.select2-container--default .select2-selection--single .select2-selection__rendered
+	margin-top: -10px	
+.selected
+	&_span
+		font-size: 14px
+		font-weight: bold
+	&_ico
+		width: 25px
+		width: 25px
+.select2-container--default .select2-selection--single .select2-selection__arrow
+	top: 10px !important
+.select_pay_selected__p	
+	font-weight: bold	
