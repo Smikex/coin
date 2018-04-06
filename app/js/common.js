@@ -1,6 +1,10 @@
+
+
 // select2
 
-var data = [{
+var data = [
+  
+  {
   id: 0,
   text: 'Bitcoin',
   value: '800',
@@ -63,6 +67,9 @@ function formatSelect(state) {
   );
   return $state;
 };
+
+
+
 
 $('.table_coin').click(function() {
   $(this).children("div").toggleClass("border_left_none");

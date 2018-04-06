@@ -66,9 +66,10 @@
       <div class="row table_up">
         <div class="col-md-6">
           <form>
-            <div class="form-group search_input">
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Search by Ticker/Name">
-              <span class="input-group-btn"><button class="btn btn-secondary" type="button"><img src="img/search.png" alt=""></button></span>
+            <div class="search">
+              <div class="search_select"></div>
+              <!-- <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Search by Ticker/Name"> -->
+              <!-- <span class="input-group-btn"><button class="btn btn-secondary" type="button"><img src="img/search.png" alt=""></button></span> -->
             </div>
           </form>
         </div>
@@ -405,7 +406,96 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script src="js/libs.min.js"></script>
+<script>
+  // select 2 search
 
+   var data2 = [
+  
+  {
+  id: 0,
+  text: 'Cryptocurrencies',
+  "children":[
+    {
+  id: 0,
+  text: 'Bitcoin',
+  value: '800',
+  curency: 'BTH'
+},
+{
+  id: 1,
+  text: 'Ethereum',
+  value: '1200',
+  curency: 'ETH'
+},
+{
+  id: 2,
+  text: 'Bitcoin cash',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 3,
+  text: 'Ripple',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 4,
+  text: 'Binance',
+  value: '500',
+  curency: 'BTC'
+
+}
+]
+},
+{
+  id: 1,
+  text: 'Tokens',
+  "children":[
+    {
+  id: 0,
+  text: 'ChainLink'
+
+},
+{
+  id: 1,
+  text: 'Bancor'
+}
+]
+
+},
+]; 
+
+$(".search_select").select2({
+  placeholder: `Search by Ticker/Name`,
+  data: data2,
+  templateResult: searchState,
+  templateSelection: searchSelect,
+
+  });
+  function searchState(state) {
+    if (!state.id) {
+      return state.text;
+    }
+    var $state = $(
+      '<span class="search_span"><img class="search_ico" src="img/select_img/' + state.text.toLowerCase() +
+      '.png" /> ' + state.text + '</span>'
+    );
+    return $state;
+  };
+  function searchSelect(state) {
+    if (!state.id) {
+      return state.text;
+    }
+    var $state = $(
+      '<span class="search_span"><img class="search_ico" src="img/select_img/' + state.text.toLowerCase() +
+      '.png" /> ' + state.text + '</span>'
+    );
+    return $state;
+  };
+
+
+</script>
 </body>
 
 </html>
