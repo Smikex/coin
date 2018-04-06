@@ -409,62 +409,59 @@
 <script>
   // select 2 search
 
-   var data2 = [
-  
-  {
-  id: 0,
+   var data2 = [{
   text: 'Cryptocurrencies',
   "children":[
     {
-  id: 0,
+  id: 1,
   text: 'Bitcoin',
   value: '800',
   curency: 'BTH'
 },
 {
-  id: 1,
+  id: 2,
   text: 'Ethereum',
   value: '1200',
   curency: 'ETH'
 },
 {
-  id: 2,
-  text: 'Bitcoin cash',
-  value: '500',
-  curency: 'BTC'
-},
-{
   id: 3,
-  text: 'Ripple',
+  text: 'Litecoin',
   value: '500',
   curency: 'BTC'
 },
 {
   id: 4,
+  text: 'Ripple',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 5,
   text: 'Binance',
   value: '500',
   curency: 'BTC'
+},
 
-}
 ]
 },
 {
-  id: 1,
   text: 'Tokens',
   "children":[
     {
-  id: 0,
+  id: 1,
   text: 'ChainLink'
-
 },
 {
-  id: 1,
+  id: 2,
   text: 'Bancor'
 }
 ]
 
-},
+}
 ]; 
+
+
 
 $(".search_select").select2({
   placeholder: `Search by Ticker/Name`,
@@ -493,6 +490,7 @@ $(".search_select").select2({
     );
     return $state;
   };
+
 
 
 </script>

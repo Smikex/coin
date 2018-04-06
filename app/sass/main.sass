@@ -195,15 +195,15 @@ footer
 .search
 	max-width: 274px
 	&_span
-		font-size: 14px
-		font-weight: bold
+
 	&_ico
 		margin: 0 15px
 		height: 30px
 		width: 30px
-	// .select2-results__option
-	// 	border-top: solid 1px #dbdbdb
-	// 	border-bottom: solid 1px #dbdbdb		
+	.select2-selection__placeholder
+		display: block
+		margin-top: 10px
+		color: #d1d1d1		
 	.select2-selection__arrow
 		display: none	
 	.select2-container--default
@@ -222,8 +222,34 @@ footer
 			height: 50px
 			position: absolute
 			background: url('../img/search.png') no-repeat
-			top: 12px
-			margin-left: 20px
+			top: 15px
+			margin-left: 230px
+.select2-results
+	&__group
+		padding-left: 20px !important
+		background-color: #f2f2f2
+		border-top: solid 1px #dbdbdb
+		font-size: 14px
+		font-weight: bold
+
+		text-transform: uppercase
+		
+	&__option
+		border-top: solid 1px #dbdbdb
+		font-size: 14px
+		font-weight: bold
+.select2-dropdown	
+	box-shadow: 0.5px 0.9px 22.9px 6.1px rgba(54, 54, 54, 0.3)
+	margin-top: 15px
+.select2-search--dropdown
+	&::after
+		content: ''
+		width: 50px
+		height: 50px
+		position: absolute
+		background: url('../img/search.png') no-repeat
+		top: 13px
+		margin-left: -25px	
 
 #accordion
 	box-shadow: 0.5px 0.9px 1.6px 0.4px rgba(54, 54, 54, 0.13)
