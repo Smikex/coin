@@ -67,7 +67,19 @@
         <div class="col-md-6">
           <form>
             <div class="search">
-              <div class="search_select"></div>
+              <div class="search_select">
+                <optgroup label="Cryptocurrencies">
+                  <option>Bitcoin</option>
+                  <option >Ethereum</option>
+                  <option>Litecoin</option>
+                  <option>Ripple</option>
+                  <option>Binance</option>
+                </optgroup>
+                <optgroup label="Tokens"> 
+                  <option>ChainLink</option>
+                  <option>Bancor</option>
+                </optgroup>
+              </div>
               <!-- <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Search by Ticker/Name"> -->
               <!-- <span class="input-group-btn"><button class="btn btn-secondary" type="button"><img src="img/search.png" alt=""></button></span> -->
             </div>
@@ -409,63 +421,8 @@
 <script>
   // select 2 search
 
-   var data2 = [{
-  text: 'Cryptocurrencies',
-  "children":[
-    {
-  id: 1,
-  text: 'Bitcoin',
-  value: '800',
-  curency: 'BTH'
-},
-{
-  id: 2,
-  text: 'Ethereum',
-  value: '1200',
-  curency: 'ETH'
-},
-{
-  id: 3,
-  text: 'Litecoin',
-  value: '500',
-  curency: 'BTC'
-},
-{
-  id: 4,
-  text: 'Ripple',
-  value: '500',
-  curency: 'BTC'
-},
-{
-  id: 5,
-  text: 'Binance',
-  value: '500',
-  curency: 'BTC'
-},
-
-]
-},
-{
-  text: 'Tokens',
-  "children":[
-    {
-  id: 1,
-  text: 'ChainLink'
-},
-{
-  id: 2,
-  text: 'Bancor'
-}
-]
-
-}
-]; 
-
-
-
 $(".search_select").select2({
   placeholder: `Search by Ticker/Name`,
-  data: data2,
   templateResult: searchState,
   templateSelection: searchSelect,
 
@@ -490,7 +447,14 @@ $(".search_select").select2({
     );
     return $state;
   };
+ 
 
+ $(".search_select").on("select2:open", function() {
+    $(".select2-search__field").attr("placeholder", "Coin");
+});
+$(".search_select").on("select2:close", function() {
+    $(".select2-search__field").attr("placeholder", null);
+});
 
 
 </script>
