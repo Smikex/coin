@@ -60,43 +60,23 @@
       </div>
     </div>
   </header>
-
-
   <section id="comparison">
 
     <div class="block container-fluid">
       <div class="row">
         <div class="col-12">
-
           <div id="compare_chart"></div>
-        </div>
-        <!-- <div class="col-3">
-          <div class="compare_up">
-            <p>Choose Cryptocurency for Composition</p>
-            <ul>
-              <li>Bitcoin</li>
-              <li>Litecoin</li>
-              <li>NAV Coin</li>
-              <li>Qtum</li>
-            </ul>
-          </div>
           <div class="compare_down">
             <p>Add to Comparison:</p>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/btc.png" alt=""> BTC</button>
-              <button type="button" class="btn btn-secondary"><img src="img/plus.png" alt=""></button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">ETH</a>
-                <a class="dropdown-item" href="#">LTC</a>
-                <a class="dropdown-item" href="#">BCH</a>
-              </div>
+              <select class="addtocompare">
+              </select>
+              <button type="button" class="btn btn-secondary btnCompare"><img src="img/plus.png" alt=""></button>
             </div>
 
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
-
 
   </section>
 
@@ -171,8 +151,219 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script src="js/libs.min.js"></script>
+<script>
+  // chart comparison
 
+
+var seriesOptions = [],
+  seriesCounter = 0,
+  names = ['BTC', 'MSFT', 'AAPL', 'GOOG'];
+
+
+/**
+ * Create the chart when all data is loaded
+ * @returns {undefined}
+ */
+function createChart() {
+  
+
+  Highcharts.stockChart('compare_chart', {
+    
+    credits: {
+    enabled: false
+},
+
+    chart: {
+      // spacingTop: 10,
+    },
+
+    title: {
+      text: 'Cryptocurrency Comparison',
+      align: 'left',
+      // x: 10,
+      // margin: 40,
+      style: {
+        "color": "#222222",
+         "fontSize": "35px",
+        "fontWeight": "300",
+        x: 10,
+      }
+    },
+    style: {
+      "fontFamily": "OpenSans",
+    },
+    legend: {
+      itemStyle: {
+        "fontSize": "14px",
+        "fontWeight": "normal",       
+      },
+      itemMargin: 10,
+      padding: 60,
+      enabled: true,
+      title: {
+        text: 'Choose Cryptocurency      <br> for Composition',
+        style: {
+          "color": "#222222",
+          "font-size": "14px",
+          "line-height": "15px",
+          "fontWeight": "bold",
+          "margin": "50px",
+        }
+      },
+      align: 'right',
+      verticalAlign: 'top',
+      layout: 'vertical',
+      x: 0,
+      y: 100,
+      borderColor: '#dbdbdb',
+      borderWidth: 1,
+    },
+    rangeSelector: {
+      selected: 0
+    },
+    colors: ['#79b54d', '#414b56', '#ff4504'],
+    yAxis: {
+      opposite: false,
+      labels: {
+        formatter: function() {
+          return (this.value > 0 ? ' + ' : '') + this.value + '%';
+        }
+      },
+      plotLines: [{
+        value: 0,
+        width: 2,
+        color: 'silver'
+      }]
+    },
+    navigator: {
+      enabled: false
+    },
+
+    plotOptions: {
+      series: {
+        compare: 'percent',
+        showInNavigator: true,
+        marker: {
+          enabled: true,
+          fillColor: '#FFFFFF',
+          radius: 4,
+          lineWidth: 2,
+          lineColor: null,
+          symbol: 'circle',
+          states: {
+            hover: {
+              radiusPlus: 3,
+              lineWidthPlus: 2,
+              // lineWidth: "5px",
+              // lineColor: "#fff"
+            }
+          },
+        }
+      }
+
+    },
+
+
+    tooltip: {
+      pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+      valueDecimals: 2,
+      split: true
+    },
+
+    series: seriesOptions,
+  });
+}
+
+$.each(names, function(i, name) {
+
+  $.getJSON('js/' + name.toLowerCase() + '-c.json', function(data) {
+
+    seriesOptions[i] = {
+      type: 'spline',
+      name: name,
+      data: data,
+
+    };
+
+    seriesCounter += 1;
+
+    if (seriesCounter === names.length) {
+      createChart();
+    }
+  });
+});
+
+var x = $('.highcharts-legend-title').filter('text').attr('x');
+console.log(x);
+  // select 2 search
+
+  var dataC = [
+  
+  {
+  id: 0,
+  text: 'Bitcoin',
+  value: '800',
+  curency: 'BTH'
+},
+{
+  id: 1,
+  text: 'Ethereum',
+  value: '1200',
+  curency: 'ETH'
+},
+{
+  id: 2,
+  text: 'Bitcoin cash',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 3,
+  text: 'Ripple',
+  value: '500',
+  curency: 'BTC'
+},
+{
+  id: 4,
+  text: 'Binance',
+  value: '500',
+  curency: 'BTC'
+
+}
+];
+
+  function searchState(state) {
+    if (!state.id) {
+      return state.text;
+    }
+    var $state = $(
+      '<span class="compare_span"><img class="search_ico" src="img/select_img/' + state.text.toLowerCase() +
+      '.png" /> ' + state.curency + '</span>'
+    );
+    return $state;
+  };
+  function searchSelect(state) {
+    if (!state.id) {
+      return state.text;
+    }
+    var $state = $(
+      '<span class="compare_span"><img class="search_ico" src="img/select_img/' + state.text.toLowerCase() +
+      '.png" /> ' + state.curency + '</span>'
+    );
+    return $state;
+  };
+
+$(".addtocompare").select2({
+  data: dataC,
+  templateResult: searchState,
+  templateSelection: searchSelect,
+
+  });
+
+</script>
 </body>
 
 </html>

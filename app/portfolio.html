@@ -341,6 +341,82 @@ Save New Settings
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/libs.min.js"></script>
+<script>
+  // portfolio_chart
+$.getJSON('js/portfoli-c.json', function(data) {
+
+// Create the chart
+Highcharts.stockChart('portfolio_chart', {
+  credits: {
+  enabled: false
+},
+  navigator: {
+    enabled: false
+  },
+  rangeSelector: {
+    selected: 1
+  },
+
+  navigation: {
+    buttonOptions: {
+      enabled: false
+    }
+  },
+  title: {
+    text: ' '
+  },
+  colors: ["#79b54d"],
+  yAxis: {
+    opposite: false,
+    offset: 60,
+    labels: {
+      align: 'left',
+      x: 0,
+      style: {
+        "fontSize": "12px",
+        "color": "#28292b",
+      }
+    }
+  },
+  series: [{
+    marker: {
+      fillColor: '#FFFFFF',
+      lineWidth: 2,
+      lineColor: null,
+      symbol: 'circle',
+      states: {
+        hover: {
+          radiusPlus: 3,
+          lineWidthPlus: 2,
+          // lineWidth: "5px",
+          // lineColor: "#fff"
+        }
+      },
+    },
+    name: ' ',
+    data: data,
+    type: 'areaspline',
+    threshold: null,
+    tooltip: {
+      valueDecimals: 2
+    },
+    fillColor: {
+      linearGradient: {
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: 1
+      },
+      stops: [
+        [0, Highcharts.getOptions().colors[0]],
+        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+      ]
+    }
+  }]
+});
+});
+
+</script>
 
 </body>
 

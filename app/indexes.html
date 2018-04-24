@@ -377,6 +377,128 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/libs.min.js"></script>
+<script>
+  // chart Indexes
+
+$.getJSON('js/indexes-c.json', function(data) {
+
+// Create the chart
+Highcharts.stockChart('coin_chart', {
+  credits: {
+  enabled: false
+},
+  navigator: {
+    enabled: false
+  },
+  rangeSelector: {
+    selected: 0
+  },
+  title: {
+    text: 'Bitcoin, BTC / Dollar, USD',
+    align: 'left',
+    style: {
+      "color": "#222222",
+      "fontSize": "35px",
+      "fontWeight": "300"
+    }
+  },
+  colors: ['rgba(121, 181, 77, 0.5)', ],
+  plotOptions: {
+    series: {
+      marker: {
+        enabled: true,
+        radius: 4,
+
+      }
+    }
+  },
+  yAxis: {
+    opposite: false,
+    offset: 60,
+    labels: {
+      align: 'left',
+      x: 0,
+      style: {
+        "fontSize": "12px",
+        "color": "#28292b",
+
+      }
+    }
+  },
+
+  series: [{
+      name: 'AAPL Stock Price',
+      data: data,
+      type: 'area',
+      threshold: null,
+      id: 'dataseries',
+      tooltip: {
+        valueDecimals: 2
+      },
+      fillColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        },
+        stops: [
+          [0, Highcharts.getOptions().colors[0]],
+          [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+        ]
+      },
+      marker: {
+        fillColor: '#FFFFFF',
+        lineWidth: 1,
+        lineColor: null,
+        symbol: 'circle',
+        states: {
+          hover: {
+            radiusPlus: 1,
+            lineWidthPlus: 2,
+          }
+        },
+      },
+    },
+
+    {
+      type: 'flags',
+      y: -14,
+      shape: 'url(img/marker_n.png)',
+      data: [{
+        x: Date.UTC(2017, 11, 6),
+        title: ' ',
+        text: 'Stocks fall on Greece, rate concerns; US dollar dips'
+      }, {
+        x: Date.UTC(2017, 11, 12),
+        title: ' ',
+        text: 'Zimbabwe ditches \'worthless\' currency for the US dollar '
+      }, {
+        x: Date.UTC(2017, 11, 4),
+        title: ' ',
+        text: 'US Dollar Declines Over the Week on Rate Timeline'
+      }, {
+        x: Date.UTC(2017, 11, 8),
+        title: ' ',
+        text: 'Greek Negotiations Take Sharp Turn for Worse, US Dollar set to Rally '
+      }, {
+        x: Date.UTC(2017, 11, 15),
+        title: ' ',
+        text: 'Euro records stunning reversal against dollar'
+      }, {
+        x: Date.UTC(2017, 11, 17),
+        title: ' ',
+        text: 'Surging US dollar curbs global IT spend'
+      }],
+      onSeries: 'dataseries',
+      // shape: 'circlepin',
+      width: 16
+    }
+
+  ]
+});
+});
+</script>
 
 </body>
 

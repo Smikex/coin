@@ -1,5 +1,3 @@
-
-
 // select2
 
 var data = [
