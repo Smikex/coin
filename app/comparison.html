@@ -64,17 +64,30 @@
 
     <div class="block container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col-9">
           <div id="compare_chart"></div>
-          <div class="compare_down">
-            <p>Add to Comparison:</p>
-              <select class="addtocompare">
-              </select>
-              <button type="button" class="btn btn-secondary btnCompare"><img src="img/plus.png" alt=""></button>
-            </div>
+
 
           </div>
+          <div class="col-3">
+              <div class="compare_up">
+                  <p>Choose Cryptocurency for Composition</p>
+                  <ul>
+                    <li id="BTC">Bitcoina </a><span class="del"> x</span></li>
+                    <li id="LTN">Litecoin</a><span class="del"> x</span></li>
+                    <li id="NAV">NAV Coin</a><span class="del"> x</span></li>
+                    <li id="QTM">Qtum</a><span class="del"> x</span></li>
+                  </ul>
+                </div>
+              <div class="compare_down">
+                  <p>Add to Comparison:</p>
+                    <select class="addtocompare">
+                    </select>
+                    <button type="button" class="btn btn-secondary btnCompare"><img src="img/plus.png" alt=""></button>
+                  </div>
         </div>
+      </div>
+        
       </div>
     </div>
 
@@ -194,32 +207,6 @@ function createChart() {
     },
     style: {
       "fontFamily": "OpenSans",
-    },
-    legend: {
-      itemStyle: {
-        "fontSize": "14px",
-        "fontWeight": "normal",       
-      },
-      itemMargin: 10,
-      padding: 60,
-      enabled: true,
-      title: {
-        text: 'Choose Cryptocurency      <br> for Composition',
-        style: {
-          "color": "#222222",
-          "font-size": "14px",
-          "line-height": "15px",
-          "fontWeight": "bold",
-          "margin": "50px",
-        }
-      },
-      align: 'right',
-      verticalAlign: 'top',
-      layout: 'vertical',
-      x: 0,
-      y: 100,
-      borderColor: '#dbdbdb',
-      borderWidth: 1,
     },
     rangeSelector: {
       selected: 0
